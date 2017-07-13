@@ -1,0 +1,4164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Timeline</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Timeline" />
+		<meta name="copyright" content="Designed and built by Webalon in London, England." />
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+		<meta http-equiv="X-UA-Compatible" content="IE=7, IE=9">
+		<meta http-equiv="imagetoolbar" content="no" />
+		<meta name="MSSmartTagsPreventParsing" content="true" />
+		<link rel="stylesheet" href="assets/css/latest-stl.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="assets/css/user-controls-stl.css" type="text/css" media="screen" />
+		<!--[if IE 6]><link type="text/css" rel="stylesheet" href="assets/css/screen.ie6.css" /><![endif]-->
+		<!--[if IE 7]><link type="text/css" rel="stylesheet" href="assets/css/screen.ie7.css" /><![endif]-->
+		<!--[if IE 8]><link type="text/css" rel="stylesheet" href="assets/css/screen.ie8.css" /><![endif]-->
+		<!--[if IE 9]><link type="text/css" rel="stylesheet" href="assets/css/screen.ie9.css" /><![endif]-->
+		<script type="text/javascript" src="assets/js/support.js"></script>
+		<!--[if IE]><script type="text/javascript" src="assets/js/excanvas.compiled.js"></script><![endif]-->
+		<script type="text/javascript" src="assets/js/latest-stl.js"></script>
+
+
+	</head>
+
+	<body class="tl-embedded-timeline">
+
+
+		<div id="console"></div>
+		<div id="tl-container">
+			<div class="tl-data tl-data-userId">19</div>
+			<div class="tl-data tl-data-secret-userId"></div>
+
+			<div id="tl-image-preloader">
+				<img src="assets/ui/black-opacity-95.png" alt="" />
+			</div>
+			<div id="tl-header">
+
+				<div class="main-logo"><a href="/"> </a></div>
+				<h1 class="tl-main-title">Timeline</h1>
+				<ul class="main-menu">
+					<li class="last"><a id="menu-item-about-this-timeline" href="#">About this timeline</a></li>
+				</ul>
+
+			</div>
+
+			<div class="tl-timeline-info">
+				<h2></h2>
+				<p class="tl-ah-about-text"></p>
+			</div>
+
+			<div id="tl-stage-holder">
+				<!--<img src="assets/ui/empty-image2.gif" alt="" id="tl-stage-image" />-->
+				<div id="tl-stage-main-photo-credit"></div>
+				<div id="tl-stage-scale-blackener"></div>
+				<div class="tl-stage"></div>
+				<div class="tl-stage-fixed-position-content"></div>
+				<canvas id="tl-3d-view-canvas" width="100" height="100"></canvas>
+
+				<div id="tl-stage-date-displayer"></div>
+				<div class="tl-stage-border-top"></div>
+				<div class="tl-stage-border-bottom"></div>
+
+				<div id="tl-uc-controls">
+
+					<div id="tl-uc-panel">
+						<div class="tl-ucp-top-right">
+							<div class="tl-ucp-top-left">
+								<div class="tl-ucp-content">
+
+									<div class="fp-carousel">
+										<div class="fp-stage">
+											<div id="tl-uc-search-block" class="fp-block fp-block-0">
+												<h3 id="uc-text-search">Search</h3>
+												<div class="ft-p1-input-holder">
+													<input id="ft-fch-sp-input" type="text" value="Enter search term" />
+													<a id="ft-fch-sp-button" href="#">Go</a>
+												</div>
+												<div id="ft-p1-filter-text">
+													<h5 id="uc-text-displaying">Displaying:</h5> <span id="ft-fch-sp-everyone-message">All stories</span><span id="ft-fch-sp-filter-message"><span id="ft-fch-sp-num-stories">X1 stories</span> <span id="uc-text-matching">matching</span> '<strong id="ft-fch-sp-filter"></strong>' (<a id="ft-fch-sp-clear" href="#">clear</a>)</span>
+												</div>
+												<a href="#" class="close-panel">Close</a>
+											</div>
+											<div id="tl-uc-view-filter-block" class="fp-block fp-block-1 ajk-content-scroller">
+												<h3 id="uc-text-category-filter">Category Filter</h3>
+												<div class="ajk-cs-carousel">
+													<div class="ajk-cs-carousel-stage">
+														<ul class="tl-colour-checkbox-list"></ul>
+													</div>
+													<div class="ajk-cs-carousel-scroll-holder">
+														<a href="#" class="ajk-cs-up-arrow"></a>
+														<a href="#" class="ajk-cs-down-arrow"></a>
+														<div class="ajk-cs-scroll-bar">
+															<span></span>
+														</div>
+													</div>
+												</div>
+												<a href="#" class="close-panel">Close</a>
+											</div>
+											<div id="tl-uc-view-type-block" class="fp-block fp-block-2">
+												<h3 id="uc-text-view-type">View Type</h3>
+												<ul class="tl-image-select-list">
+													<li class="tl-isl-standard" view="0">
+														<div class="image-holder"><span></span></div>
+														<p>Standard</p>
+													</li>
+													<li class="tl-isl-category" view="1">
+														<div class="image-holder"><span></span></div>
+														<p>Category Bands</p>
+													</li>
+													<li class="tl-isl-coloured" view="2">
+														<div class="image-holder"><span></span></div>
+														<p>Coloured Stories</p>
+													</li>
+													<li class="tl-isl-duration" view="3">
+														<div class="image-holder"><span></span></div>
+														<p>Duration</p>
+													</li>
+												</ul>
+												<a href="#" class="close-panel">Close</a>
+											</div>
+											<div id="tl-uc-spacing-block" class="fp-block fp-block-3">
+												<h3 id="uc-text-story-spacing">Story Spacing</h3>
+
+												<select>
+													<option value="0">Standard</option>
+													<option value="1">Equal Spacing 1</option>
+													<option value="2">Equal Spacing 2</option>
+													<option value="3">Top to Bottom - 3 rows</option>
+													<option value="4">Top to Bottom - 4 rows</option>
+													<option value="5">Top to Bottom - 5 rows</option>
+													<option value="6">Top to Bottom - 6 rows</option>
+													<option value="7">Top to Bottom - 7 rows</option>
+													<option value="8">Top to Bottom - 8 rows</option>
+													<option value="9">Top to Bottom - 9 rows</option>
+													<option value="10">Top to Bottom - 10 rows</option>
+												</select>
+												<a href="#" class="close-panel">Close</a>
+											</div>
+											<div id="tl-uc-zoom-block" class="fp-block fp-block-4">
+												<h3 id="uc-text-zoom">Zoom</h3>
+												<select>
+													<option></option>
+												</select>
+												<div class="zoom-buttons">
+													<a href="#" class="zoom-in">+</a>
+													<a href="#" class="zoom-out">-</a>
+												</div>
+												<a href="#" class="close-panel">Close</a>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="tl-ucp-bottom-right">
+							<div class="tl-ucp-bottom-left"></div>
+						</div>
+					</div>
+
+					<div class="menu-holder">
+						<ul>
+							<li class="selected" fppos="0"><a href="#">Search</a></li>
+							<li fppos="1"><a href="#">Categories</a></li>
+							<li fppos="2"><a href="#">View Type</a></li>
+							<li fppos="3"><a href="#">Spacing</a></li>
+							<li fppos="4"><a href="#">Zoom</a></li>
+						</ul>
+					</div>
+					<a href="#" class="launch">Launch</a>
+				</div>
+
+				<a href="#" id="tl-timeline-3d-launch">View<br> in 3D</a>
+
+				<div class="tl-main-intro-block">
+					<div class="tl-mib-inner">
+						<div class="tl-mib-image-holder">
+							<img src="assets/ui/empty-image.gif" />
+							<div class="tl-mib-image-mask"><span></span></div>
+						</div>
+						<h3 class="tl-mib-headline"></h3>
+						<div class="tl-mib-content">
+							<p></p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div id="tl-slider-holder">
+				<div id="tl-slider-scale-holder">
+					<div id="tl-slider-scale">
+						<canvas class="tl-scale-canvas" width="5000" height="52"></canvas>
+						<div id="tl-slider-scale-times-holder">
+						</div>
+						<div id="tl-slider-markers-holder">
+						</div>
+					</div>
+				</div>
+				<div id="tl-slider-dragger">
+					<div class="tlsd-inner">
+						<div class="tlsd-inner-inner">
+							<div class="tlsd-corner tlsd-c-tl"></div>
+							<div class="tlsd-corner tlsd-c-tr"></div>
+							<div class="tlsd-corner tlsd-c-bl"></div>
+							<div class="tlsd-corner tlsd-c-br"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tl-footer"></div>
+
+			<div id="tl-content-holder" class="tl-main-content-block-holder tl-font">
+				<div class="tl-mc-fade"></div>
+				<div class="tl-mc-coloured-border"></div>
+				<div class="tl-main-content-block">
+					<div class="tl-mc-top-right">
+						<div class="tl-mc-top-left">
+							<div class="tl-mc-carousel">
+								<div class="tl-mc-carousel-stage">
+
+									<div class="tl-mc-content">
+
+										<div class="tl-mc-content-images-and-text">
+
+											<div class="tl-ch-top-content">
+												<ul class="tl-ch-media-list">
+													<li rel="images" class="tl-ch-selected"><a href="#"><em>Images</em> (<span>7</span>)</a></li>
+													<li rel="videos"><a href="#"><em>Videos</em> (<span>2</span>)</a></li>
+													<li rel="audio"><a href="#"><em>Audio</em> (<span>1</span>)</a></li>
+												</ul>
+												<span class="tl-ch-close-content">Close</span>
+												<h5 class="tl-ch-panel-date-display">10th August 2035</h5>
+											</div>
+
+											<div class="tl-ch-content-block tl-ch-gallery-block">
+												<div class="tl-gallery ak-gallery">
+													<div class="tl-g-main-content ak-gallery-stage-holder">
+														<div class="ak-gallery-image-storage"></div>
+														<div class="tl-g-main-stage ak-gallery-stage">
+														</div>
+														<div class="tl-g-content-mask">
+															<div class="tl-g-content-mask-inner"></div>
+															<div class="tl-g-gallery-controls">
+																<a class="tl-g-gallery-control-left" href="#"></a>
+																<a class="tl-g-gallery-control-right" href="#"></a>
+															</div>
+														</div>
+													</div>
+													<div class="tl-g-thumb-holder">
+														<div class="tl-g-thumb-stage">
+														</div>
+														<a class="tl-g-thumb-control-left" href="#"></a>
+														<a class="tl-g-thumb-control-right" href="#"></a>
+													</div>
+												</div> <!-- /tl-gallery -->
+											</div>
+
+											<div class="tl-ch-content-block tl-ch-content-block-text">
+												<div class="tl-ch-content-block-inner ajk-content-scroller">
+													<div class="tl-ch-content-intro-block ajk-cs-carousel">
+														<div class="ajk-cs-carousel-stage">
+															<h3 class="tl-font-head"></h3>
+															<p class="tl-ch-standfirst tl-font-body"></p>
+															<p class="tl-ch-author"></p>
+															<div class="tl-ch-extra-info-text tl-font-body"></div>
+															<a href="#" class="tl-ch-full-story-link rt-button-medium rt-button-medium-long" target="_top">Read full story</a>
+														</div>
+														<div class="ajk-cs-carousel-scroll-holder">
+															<a href="#" class="ajk-cs-up-arrow"></a>
+															<a href="#" class="ajk-cs-down-arrow"></a>
+															<div class="ajk-cs-scroll-bar">
+																<span></span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="tl-ch-video-content">
+											<div class="tl-ch-vc-inner">
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tl-mc-bottom-right">
+						<div class="tl-mc-bottom-left">
+							<div class="tl-mc-footer-content">
+								<div class="tl-ch-bc-inner tl-ch-next-prev-story">
+									<p class="tl-ch-selected-story-num">x1 of x2 stories</p>
+									<a class="tl-ch-prev-story" href="#"></a>
+									<a class="tl-ch-next-story" href="#"></a>
+								</div>
+								<a class="tl-ch-close-video rt-button-3 rt-button-3-long" href="#">Close video</a>
+								<a href="#" id="tl-ch-start-timeline-button" class="tl-ch-start-timeline rt-button-3">Continue</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+			<div id="tl-cp-image-viewer">
+				<div class="tl-cpiv-main-item"></div>
+				<div class="tl-cpiv-caption-holder">
+					<p></p>
+				</div>
+				<div class="tl-cpiv-content-mask">
+					<div class="tl-cpiv-content-mask-inner"></div>
+					<a href="#"></a>
+				</div>
+			</div>
+		</div>
+
+			<script id="timelinedata-script" type="text/javascript">
+
+<!-- START CODE REPLACEMENT HERE-->
+var TLTimelineData = {
+	"host": "www.tiki-toki.com",
+	"homePage": false, 
+	"showAdBlock": "false", 
+	"id":390349,
+	"title":"CSSI Timeline",
+	"urlFriendlyTitle":"CSSI-Timeline",
+	"startDate":"1998-05-01 10:51:15",
+	"endDate":"2015-04-02 01:30:05",
+	"introText":"",
+	"aboutText":"<img src=\"http://cssi.cabezon.com/timeline-assets/assets/images/Categories.png\" style=\"float:left; padding-right:10px;\"> Select one or more offices by clicking on wrench in lower right hand corner and checking one or more under Category.  ;xNLx;To navigate the timeline please click on the handle located at the bottom and drag it to the left or right to view the milestones for a specific year. To search, or to change your View Type, Spacing, or Zoom options, please click on the wrench icon in the lower right-hand corner. For more detailed instructions on using this timeline please <a href=\"#\">click here</a>. ",
+	"introImage":"",
+	"authorName":"Center for Strategic Scientific Initiatives",
+	"accountType":"Standard",
+	"backgroundImage":"http://cssi.cabezon.com/images/cssi-timeline-background3.jpg",
+	"introImageCredit":"",
+	"backgroundImageCredit":"",
+	"feed": "",
+	"mainColour": "A2B8BE",
+	"zoom": "year-large-month",
+	"initialFocus": "last",
+	"embedHash": "1566944254",
+	"embed": "true",
+	"secret": "false",
+	"public": "yes",
+	"dontDisplayIntroPanel": 0,
+	"openReadMoreLinks": 1,
+	"storyDateStatus": 0,
+	"storySpacing": 1,
+	"viewType": 1,
+	"showTitleBlock": 1,
+	"backgroundColour": "FFFFFF",
+	"storyDateFormat": "MMMM YYYY",
+	"topDateFormat": "auto",
+	"sliderDateFormat": "auto",
+	"language": "english",
+	"displayStripes": 0,
+	"htmlFormatting": 1,
+	"sliderBackgroundColour": "000000",
+	"sliderTextColour": "808080",
+	"sliderDetailsColour": "282828",
+	"sliderDraggerColour": "808080",
+	"headerBackgroundColour": "000000",
+	"headerTextColour": "808080",
+	"showGroupAuthorNames": "1",
+	"durHeadlineColour": "ffffff",
+	"cssFile": "",
+	"altFlickrImageUrl": "",
+	"fontBase": "default",
+	"fontHead": "default",
+	"fontBody": "default",
+	"lightboxStyle": "0",
+	"showControls": "1",
+	"lazyLoading": "1",
+	"expander": "2",
+	"copyable": "0",
+	"settings3d": "1,ffffff,0.25,883,0.1125,1.25,1,3,0.25",
+	"bgStyle": "1",
+	"bgScale": "100",
+	"urlHashing": 1, 
+	"categories":[{
+		"id":248853,
+		"title":"CSSI OD",
+		"colour":"1EC4AE",
+		"layout":"0",
+		"rows":"3",
+		"order":"1",
+		"size":"10"
+	},{
+		"id":248854,
+		"title":"OBBR",
+		"colour":"0D1A8A",
+		"layout":"0",
+		"rows":"3",
+		"order":"7",
+		"size":"10"
+	},{
+		"id":248858,
+		"title":"OCCPR",
+		"colour":"FF9400",
+		"layout":"0",
+		"rows":"3",
+		"order":"2",
+		"size":"10"
+	},{
+		"id":248857,
+		"title":"OCG",
+		"colour":"D69900",
+		"layout":"0",
+		"rows":"3",
+		"order":"6",
+		"size":"10"
+	},{
+		"id":248861,
+		"title":"OCNR",
+		"colour":"0B8701",
+		"layout":"0",
+		"rows":"3",
+		"order":"3",
+		"size":"10"
+	},{
+		"id":248862,
+		"title":"OPSO",
+		"colour":"A00002",
+		"layout":"0",
+		"rows":"3",
+		"order":"4",
+		"size":"10"
+	},{
+		"id":248856,
+		"title":"TCGA",
+		"colour":"5A6F82",
+		"layout":"0",
+		"rows":"3",
+		"order":"5",
+		"size":"10"
+	}],			
+	"feeds":[],			
+	"stories":[{
+		"id":3971810,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"National Cancer Advisory Board (NCAB) Working Group",
+		"startDate":"2003-09-09 13:34:21",
+		"endDate":"2003-09-10 13:34:21",
+		"text":"",
+		"fullText": "NCAB working group on BiomedicalTechnology was commissioned.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/ncab/127_0903/09sep03mins.pdf",
+		"media":[]				
+	},{
+		"id":3990752,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Fourth Annual PS-OC Network Investigators' Meeting",
+		"startDate":"2013-04-17 23:32:39",
+		"endDate":"2013-04-19 23:32:39",
+		"text":"",
+		"fullText": "The Fourth Annual NCI PS-­OC Network Investigators Meeting was hosted by the Arizona State University PS-­OC and held in Scottsdale, Arizona.The meeting offered the opportunity to share recent findings and insights, build existing and new collaborations across the PS-­OC Network, and brainstorm ideas for the next year of the program.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://capconcorp.com/meeting/2013/psoc/",
+		"media":[{
+			"id":2174084,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Fourth_Annual_Physical_Sciences-Oncology_Centers_Network_Investigators_Meeting.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3952002,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Proteomic Planning Workshop",
+		"startDate":"2002-04-01 10:51:15",
+		"endDate":"2002-04-01 10:51:15",
+		"text":"",
+		"fullText": "Proteomics Planning Workshop was held by the National Cancer Institute, National Human Genome Research Institute, and National Institute of General Medical Sciences.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3952040,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"FDA/NCI Interagency Oncology Task Force (IOTF)",
+		"startDate":"2003-05-01 10:51:15",
+		"endDate":"2003-05-01 10:51:15",
+		"text":"",
+		"fullText": "IOTF was formed as a multi-part agency effort to enhance the efficiency of clinical research and the scientific evaluation of new cancer medications. The goal of the IOTF is to leverage the expertise and capabilities of both agencies for the purpose of streamlining and accelerating the overall development of diagnostic, preventive,and therapeutic interventions for cancer.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3952182,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Genetic Markers of Susceptibility (CGEMS) Launch",
+		"startDate":"2005-02-02 04:15:36",
+		"endDate":"2005-02-02 04:15:36",
+		"text":"",
+		"fullText": "The CGEMS project was launched in 200 to identify common inherited genetic variations associated with risk for breast and prostate cancer. In collaboration with extramural scientists, NCI's Division of Cancer Epidemiology and Genetics has developed the CGEMS initiative into a robust research program involving genome-‐wide association studies (GWASs) for a number of cancers and, more recently,exposures and survival.",
+		"category":"248857",
+		"dateFormat":"auto",
+		"externalLink":"http://dceg.cancer.gov/research/how-we-study/genomic-studies/cgems-summary",
+		"media":[]				
+	},{
+		"id":3952343,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Strategies to Integrate Biomarkers Into Cancer Clinical Trials Workshop",
+		"startDate":"2005-02-03 04:15:36",
+		"endDate":"2005-02-03 04:15:36",
+		"text":"",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3952348,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Alliance for Nanotechnology in Cancer (ANC) Phase Launch",
+		"startDate":"2005-10-03 04:15:36",
+		"endDate":"2005-10-03 04:15:36",
+		"text":"",
+		"fullText": "NCI announces a new $144M, 5-­year initiative to develop and apply nanotechnology to cancer. The NCI ANC is engaged in efforts to harness the power of nanotechnology to radically change the way we diagnose, treat, and prevent cancer.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://nano.cancer.gov/action/news/news_release_2005_10_03.asp",
+		"media":[]				
+	},{
+		"id":3952370,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The Cancer Genome Project Proposal Presented to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2005-11-14 01:45:17",
+		"endDate":"2005-11-14 01:45:17",
+		"text":"",
+		"fullText": "The mission of this proposed initiative is to develop a systematic approach to identifying genetic alterations of cancer that have meaningful clinical impact on few rationally selected cancer types.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa1105/14nov05mins.pdf",
+		"media":[{
+			"id":2205027,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/The_Cancer_Genome_Atlas_Approval.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3952487,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The Cancer Genome Atlas (TCGA) Approval",
+		"startDate":"2005-12-13 01:45:17",
+		"endDate":"2005-12-13 01:45:17",
+		"text":"",
+		"fullText": "NCI and the NHGRI launched TCGA as a collaborative 3-­year pilot project to test the feasibility of using large-scale genome analysis technologies to determine all of the important genomic changes involved in cancer.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://cancergenome.nih.gov/newsevents/newsannouncements/news_12_13_2005",
+		"media":[]				
+	},{
+		"id":3952627,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Integrating and Leveraging the Physical Sciences to Open a New Frontier in Oncology",
+		"startDate":"2008-02-26 16:21:21",
+		"endDate":"2008-02-28 16:21:21",
+		"text":"",
+		"fullText": "\"Integrating and Leveraging the Physical Sciences to Open a New Frontier in Oncology\" think tank convened in Washington, DC.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://opso.cancer.gov/report/ps1.aspx",
+		"media":[{
+			"id":2200480,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Integrating_and_Leveraging_the_Physical_Sciences_to_Open_a_New_Frontier_in_Oncology.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3952651,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"TARGET Initiative Launch",
+		"startDate":"2008-03-01 13:03:31",
+		"endDate":"2008-03-01 13:03:31",
+		"text":"",
+		"fullText": "The goal of NCI's Therapeutically Applicable Research to Generate Effective Treatments (TARGET) Initiative is to identify valid therapeutic targets in childhood cancers so that new, more effective treatments can be rapidly developed.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://ocg.cancer.gov/programs/target/projects",
+		"media":[{
+			"id":2205037,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/TARGET_Initiative_Launch.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3952814,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"New Look at Evolution and Evolutionary Theory in Cancer",
+		"startDate":"2008-07-13 00:12:29",
+		"endDate":"2008-07-15 00:12:29",
+		"text":"",
+		"fullText": "\"A New Look at Evolution and Evolutionary Theory in Cancer\" think tank convened in Washington,DC.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://opso.cancer.gov/report/ps2.aspx",
+		"media":[{
+			"id":2135745,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/A_New_Look_at_Evolution_and_Evolutionary_Theory_in_Cancer.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3952823,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Phase II: Alliance for Nanotechnology in Cancer (ANC) Approval by NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2008-11-06 00:12:29",
+		"endDate":"2008-11-07 00:12:29",
+		"text":"",
+		"fullText": "BSA approves reissuance of Phase II: ANC. Reissuance will provide for an increased focus on complete technology solutions leveraging collaborative efforts within the centers and across centers and platforms, including are designed training program.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa1108/06nov08mins.pdf",
+		"media":[]				
+	},{
+		"id":3952828,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The Cancer Genome Atlas (TCGA) Phase II Approval by NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2008-11-06 00:12:29",
+		"endDate":"2008-11-07 00:12:29",
+		"text":"",
+		"fullText": "The mission of the Network’s pilot project is to assess the feasibility of full-‐scale effort to identify and catalogue genomic alterations, including mutations, translocations, methylation of chromatin marks, and gene expression,using three different cancer types: brain,lung,and ovary.The BSA approves TCGA Phase II program, an increase to 20 tumor types beyond those studied in the pilot project.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa1108/06nov08mins.pdf",
+		"media":[]				
+	},{
+		"id":3952835,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Physical Sciences Oncology Program Presented to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2008-11-06 01:09:53",
+		"endDate":"2008-11-06 01:09:53",
+		"text":"",
+		"fullText": "The NCI proposes to build a collaborative network of Physical Sciences–Oncology Centers that will bring physical scientists and cancer researchers together to address key questions in cancer research that involve physical laws and principles.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://videocast.nih.gov/Summary.asp?File=14760&bhcp=1",
+		"media":[]				
+	},{
+		"id":3952849,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Physical Sciences-Oncology Centers (PS-OC) Launch",
+		"startDate":"2009-10-01 01:09:53",
+		"endDate":"2009-10-01 01:09:53",
+		"text":"",
+		"fullText": "The NCI explores new and innovative approaches to better understand and control cancer through initiatives that enable the convergence of the physical sciences with cancer biology. The Physical Sciences in Oncology initiative will establish scientific teams and individual scientists from the fields of physics, mathematics, chemistry, and engineering to examine cancer using approaches that have not been followed in cancer research to date.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://physics.cancer.gov/centers/",
+		"media":[]				
+	},{
+		"id":3952863,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomic Technologies for Cancer (CPTC) Phase II Concept Approval by NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2010-03-08 01:09:53",
+		"endDate":"2010-03-08 01:09:53",
+		"text":"",
+		"fullText": "CPTC BSA approves CPTC reissuance. The CPTAC initiative was launched in 200 to address technical barriers related to discovery and verification in proteomics, as well as issues concerning biospecimens, statistical issues in experimental design,data acquisition and analysis,and lack of standards and high quality reagents.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0310/08mar10mins.pdf",
+		"media":[]				
+	},{
+		"id":3952927,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"I-SPY 2 Trial",
+		"startDate":"2010-03-02 10:15:49",
+		"endDate":"2010-03-02 10:15:49",
+		"text":"",
+		"fullText": "The Biomarkers Consortium, unique public-­private partnership led by the U.S. Food and Drug Administration, National Institutes of Health, and Foundation for the National Institutes of Health announced I-­SPY Trial, clinical trialto help screen promising new drugs being developed for women with high-­risk, fast-­growing breast cancer.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://www.fnih.org/work/key-­initiatives/biomarkers-­consortium/ispy2",
+		"media":[]				
+	},{
+		"id":3952936,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Alliance for Nanotechnology in Cancer (ANC) Phase II Launch",
+		"startDate":"2010-09-01 10:15:49",
+		"endDate":"2010-09-01 10:15:49",
+		"text":"",
+		"fullText": "NCI Board of Scientific Advisors approves second phase of the program with an investment of approximately $30M per year for the next years.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3952969,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"National Academy of Sciences",
+		"startDate":"2011-01-01 19:21:45",
+		"endDate":"2011-01-01 19:21:45",
+		"text":"Dr. Jerry S.H.Lee presents “E Kamakani Noi`I: Wind that Seeks Knowledge”",
+		"fullText": "<a href=\"http://www.hawaii.edu/offices/op/innovation/lee.pdf\">View slides here</a>",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://www.hawaii.edu/offices/op/innovation/speaker-list.html",
+		"media":[{
+			"id":1896376,
+			"src":"http://vimeo.com/19757356",
+			"caption":"",
+			"type":"Video",
+			"thumbPosition":"0,0",
+			"externalMediaThumb":"http://i.vimeocdn.com/video/125524326_640.jpg",
+			"externalMediaType":"vimeo",
+			"externalMediaId":"19757356",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3957949,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"TCGA Holds First Annual Scientific Symposium - Enabling Cancer Research Through TCGA",
+		"startDate":"2011-11-17 01:12:25",
+		"endDate":"2011-11-18 01:12:25",
+		"text":"",
+		"fullText": "Investigators from around the world shared their novel biological discoveries, analytical methods,and translational approaches using TCGA data.",
+		"category":"248856",
+		"dateFormat":"auto",
+		"externalLink":"http://www.capconcorp.com/meeting/2011/TCGA/default.asp",
+		"media":[]				
+	},{
+		"id":3957277,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"National Academy of Sciences",
+		"startDate":"2011-05-03 19:21:45",
+		"endDate":"2011-05-03 19:21:45",
+		"text":"Dr. Jerry S.J. Lee presents \"Meeting Global Challenges: German-US Innovation Policy\"",
+		"fullText": "<a href=\"http://cssi.cancer.gov/pdf/NASPresentation-Berlin-052511.pdf\">View slides here</a>",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://sites.nationalacademies.org/pga/step/pga_062504.htm",
+		"media":[{
+			"id":2200849,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/National_Academy_of_Sciences_May2011.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3957933,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"BSA Approves New RFA for NCI's \"Provocative Questions\"",
+		"startDate":"2011-06-01 10:15:48",
+		"endDate":"2011-06-01 10:15:48",
+		"text":"",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0611/presentations/Lowy.pdf",
+		"media":[{
+			"id":2200888,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/BSA_Approves_New_RFA_for_NCIs_Provocative_Questions.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3957936,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Request for Application for NCI's \"Provocative Questions\"",
+		"startDate":"2011-08-02 10:15:48",
+		"endDate":"2011-08-02 10:15:48",
+		"text":"",
+		"fullText": "<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-11-011.html\">Link 1</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-11-012.html\">Link 2</a>",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3957939,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Office of Cancer Clinical Proteomics Research (OCCPR) Announces Launch of a Clinical Proteomic Tumor Analysis Consortium",
+		"startDate":"2011-08-02 10:15:48",
+		"endDate":"2011-08-02 10:15:48",
+		"text":"",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/programs/cptacnetwork",
+		"media":[{
+			"id":2200898,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Office_of_Cancer_Clinical_Proteomics_Research_Announces_Launch_of_a_Clinical_Proteomic_Tumor_Analysis_Consortium.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3957942,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Statistical Experimental Design Considerations in Research Studies Using Proteomic Technologies",
+		"startDate":"2011-08-02 10:15:48",
+		"endDate":"2011-08-02 10:15:48",
+		"text":"",
+		"fullText": "\"Joint Workshop of the National Cancer Institute, National Heart, Lung and Blood Institute, and American Association for Clinical Chemistry\" convened in Bethesda, MD to help address issues of statistical experimental design.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3957954,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Request for Application for Innovative Molecular Analysis Technology",
+		"startDate":"2011-12-01 01:12:25",
+		"endDate":"2011-12-01 01:12:25",
+		"text":"",
+		"fullText": "<a href=\"http://www.grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-001.html\">RFA­CA-­13-­001(R21)</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-002.html\">RFA­CA-­13-­002 (R33)</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-003.html\">RFA‐CA‐13‐003(R21)</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-004.html\">RFA­‐CA‐13­‐004(R33)</a>",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3957971,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"National Academy of Sciences",
+		"startDate":"2012-03-05 01:12:25",
+		"endDate":"2012-03-06 01:12:25",
+		"text":"Dr. Jerry S.H. Lee presents \"Opportunities for Cooperation Current Initiatives at the U.S. National Cancer Institute\"",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://www.czechtechnologydays.org/sites/default/files/Final%20program_US-Czech%20Innovation%20Conference_0.pdf",
+		"media":[]				
+	},{
+		"id":3957978,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Request for Application for NCI's \"Provocative Questions\"",
+		"startDate":"2012-09-04 01:12:25",
+		"endDate":"2012-09-04 01:12:25",
+		"text":"",
+		"fullText": "<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-12-015.html\">RFA-­CA-­12-­015 (R01)</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-12-016.html\">RFA-­CA-­12-­016 (R21)</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-12-017.html\">RFA-­CA-­12-­017 (R01)</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-12-018.html\">RFA-­CA-­­12-018 (R21)</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-12-019.html\">RFA-­CA-­12-­019 (R01)</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-12-018.html\">RFA-­CA-­12-­020 (R21)</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-12-019.html\">RFA-­CA-­12-­021 (R01)</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-12-022.html\">RFA-­CA-­12-­022 (R21)</a>",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3958192,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"13th Annual Innovative Molecular Analysis Technologies Principal Investigators Meeting",
+		"startDate":"2012-11-01 01:12:25",
+		"endDate":"2012-11-01 01:12:25",
+		"text":"",
+		"fullText": "<a href=\"http://innovation.cancer.gov/news/13th/IMAT_Program_Book_Web.pdf\">View program book here</a>;xNLx;<a href=\"http://innovation.cancer.gov/news/13th/2012%20IMAT%20PI%20Retreat%20Summary%20Report%20Final.pdf\">View report here</a>",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[{
+			"id":2140319,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/13th_Annual_Innovative_Molecular_Analysis.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3958212,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"World CTC Summit",
+		"startDate":"2012-11-01 23:32:39",
+		"endDate":"2012-11-01 23:32:39",
+		"text":"",
+		"fullText": "Dr. Jerry S.H. Lee presents: <i>Finding the Needle...Again...Again...and Again...and Again: Lessons Learned from NCI Programs</i>;xNLx;<a href=\"http://cssi.cancer.gov/pdf/1-WorldCTCSummit-Final-111312-JL.pdf\">View Presentation</a>;xNLx;;xNLx;Dr. Emily Greenspan presents: <i>Defining questions in the use of CTCs in a Cancer Prevention Setting</i>;xNLx;<a href=\"http://cssi.cancer.gov/pdf/WorldCTC-Summit-Workshop_110812_EG-tagged.pdf\">View Presentation</a>",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3958225,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"American Society of Mechanical Engineers (ASME)/NanoEngineering for Medicine and Biology (NEMB)",
+		"startDate":"2013-02-01 23:32:39",
+		"endDate":"2013-02-01 23:32:39",
+		"text":"",
+		"fullText": "Dr. Jerry S.H. Lee, (CSSI OD) Keynotes;xNLx;<a href=\"http://cssi.cancer.gov/pdf/1-NEMB_Boston-Final-020413-Reduced.pdf\">View Slides</a>;xNLx;;xNLx;Dr. Tony Dickherber, (CSSI);xNLx;<a href=\"http://cssi.cancer.gov/pdf/Dickherber_NCI-IMAT@NEMB-2013-508.pdf\">View Presentation</a>;xNLx;;xNLx;Dr. Chris Kinsinger (OCCPR);xNLx;<a href=\"http://cssi.cancer.gov/pdf/2013_02_05_Kinsinger_NEMB-tagged.pdf\">View Presentation</a>",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3958231,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Launch of joint contract with OPSO/CSSI-OD/BBRB in investigating the effect of pre-analytical variables of CTC enumeration and quality using high-content analysis tools",
+		"startDate":"2013-03-01 23:32:39",
+		"endDate":"2013-03-01 23:32:39",
+		"text":"",
+		"fullText": "This contract serves as a pilot for exploring how pre-­analytic variables and sample handling affect the results and findings of high-­content screening of clinical samples.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3958240,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"American Association for Cancer Research (AACR)",
+		"startDate":"2013-04-02 23:32:39",
+		"endDate":"2013-04-02 23:32:39",
+		"text":"Dr. Tony Dickherber presents: Transformative Technology Development Support from the NCI Innovative Molecular Analysis Technology Program (AACR NCI Sponsored Session)",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://cssi.cancer.gov/pdf/Dickherber_NCI-IMAT@AACR%202013-508.pdf",
+		"media":[{
+			"id":2200950,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/AACR_Dr_Tony_Dickherber_Presents_Transformative_Technology_Deveopment_Support.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3958264,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"National Academy of Sciences",
+		"startDate":"2013-04-02 23:32:39",
+		"endDate":"2013-04-02 23:32:39",
+		"text":"Dr. Jerry S.H. Lee presents keynote speech: \"Enhancing International Cooperation: The Biomedical Opportunity\"",
+		"fullText": "<a href=\"http://cssi.cancer.gov/pdf/NAS_Bratislava-042513-Final-JL-508.pdf\">View slides here</a>",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://www.amcham.sk/events/1853_innovation-imperative-slovakias-future",
+		"media":[{
+			"id":2200957,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/National_Academy_of_Sciences_Dr_Jerry_SH_Lee.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3958276,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"U.S. National Academie's Board on Science, Technology, and Economic Policy (STEP) and Singapore's Agency for Science, Technology, and Research",
+		"startDate":"2013-05-01 12:49:08",
+		"endDate":"2013-05-01 12:49:08",
+		"text":"Dr. Jerry S.H. Lee presents: Advancing Innovation and Convergence in Cancer Research and panel presentation Driving Biomedical Innovation.",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://cssi.cancer.gov/pdf/1-NAS_Singapore-Final-051513-JL-tagged.pdf",
+		"media":[{
+			"id":2200972,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/US_National_Academies_Board_On_Science_Technology_and_Economic_Policy.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3958282,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"1st Annual CSSI Science Day",
+		"startDate":"2013-06-04 12:49:08",
+		"endDate":"2013-06-04 12:49:08",
+		"text":"",
+		"fullText": "Advances in research endeavors supported by CSSI Programs and Offices were shared in a staff scientific workshop, including presentations of unpublished work by CSSI-­supported investigators. Collaborative opportunities that complement existing and new aspects of CSSI’s programs were discussed culminating of ideas for long term growth and new scientific endeavors that support CSSI’s mission.<br>;xNLx;<a href=\"http://cssi.cancer.gov/Video_Lowy.asp\">VIDEO: Douglas Lowy, Acting Director, CSSI</a><br>;xNLx;<a href=\"http://cssi.cancer.gov/Video_Grodzinski.asp\">VIDEO: Piotr Grodzinski, Director, OCNR</a><br>;xNLx;<a href=\"http://cssi.cancer.gov/Video_Nagahara.asp\">VIDEO: Larry Nagahara, Director, OPSO</a><br>;xNLx;<a href=\"http://cssi.cancer.gov/Video_Rodriguez.asp\">VIDEO: Henry Rodriguez, Director, OCCPR</a>",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://cssi.cancer.gov/pdf/CSSI-Science-Day_Agenda.pdf",
+		"media":[]				
+	},{
+		"id":3958312,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"CBS News highlights Alliance investigator Mark Davis as nanotechnology treatments for cancer advance through clinical trials",
+		"startDate":"2013-08-01 12:49:08",
+		"endDate":"2013-08-01 12:49:08",
+		"text":"",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://www.cbsnews.com/news/engineer-develops-new-way-to-fight-wifes-cancer/",
+		"media":[{
+			"id":2168546,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/CBS_News_highlights_Alliance_investigator_Mark_Davis.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3958317,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Request for Applications (RFA) for NCI's \"Provocative Questions\"",
+		"startDate":"2013-09-03 12:49:08",
+		"endDate":"2013-09-03 12:49:08",
+		"text":"",
+		"fullText": "Each research project proposed in response to these RFAs must be focused on addressing particular research problem defined by one specific PQ selected from one of the designated groups below.;xNLx;Group A covered by <a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-016.html\">RFA-­CA-­13-­016 (R01)</a> and <a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-017.html\">RFA­CA-­13-­017 (R21)</a> that generally relates to cancer prevention and risk. ;xNLx;Group B covered by <a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-018.html\">RFA­CA-­13-­018 (R01)</a> and <a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-019.html\">RFA‐CA‐13-­019 (R21)</a> that generally relates to mechanisms of tumor development or recurrence.;xNLx;Group C covered by <a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-020.html\">RFA­CA-­13-­020 (R01)</a> and <a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-021.html\">RFA-­CA-­13-­021 (R21)</a> that generally relates to cancer detection, diagnosis, and prognosis.;xNLx;Group D covered by <a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-022.html\">RFA-CA-13-022 (R01)</a> and <a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-023.html\">RFA-CA-13-023 (R21)</a> that generally relates to cancer therapy.;xNLx;Group E covered by <a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-024.html\">RFA-CA-13-024 (R01)</a> and <a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-025.html\"> RFA-CA-13-025 (R21)</a> that generally relates to clinical effectiveness.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3963489,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"First-Generation Guidelines for NCI-Supported Biorepositories",
+		"startDate":"2006-04-04 21:47:53",
+		"endDate":"2006-04-04 21:47:53",
+		"text":"",
+		"fullText": "First-­Generation Guidelines for NCI-­Supported Biorepositories, published in the Federal Register, is a step toward unifying policies and procedures for NCI-­supported biorepositories and to form the basis for additional OBBR initiatives.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3962940,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Request for Applications for Early-Stage Innovative Molecular Analysis Technology (IMAT) Development for Cancer Research (R21) and Validation and Advanced Development of Emerging Molecular Analysis Technologies (EMAT) for Cancer Research (R33)",
+		"startDate":"2013-12-03 09:31:18",
+		"endDate":"2013-12-03 09:31:18",
+		"text":"",
+		"fullText": "<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-001.html\">RFA-CA-13-001</a>, <a href=\"http://grants.nih.gov/grants/funding/ac_search_results.htm?text_curr=r21&Search.x=0&Search.y=0&Search_Type=Activity\">R21</a> Exploratory/Developmental Grant;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-002.html\">RFA-CA-13-002</a>, <a href=\"http://grants.nih.gov/grants/funding/ac_search_results.htm?text_curr=r33&Search.x=0&Search.y=0&Search_Type=Activity\">R33</a> Exploratory/Developmental Grants Phase II;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-003.html\">RFA-CA-13-003</a>, <a href=\"http://grants.nih.gov/grants/funding/ac_search_results.htm?text_curr=r21&Search.x=0&Search.y=0&Search_Type=Activity\">R21</a> Exploratory/Developmental Grant;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-13-004.html\">RFA-CA-13-004</a>, <a href=\"http://grants.nih.gov/grants/funding/ac_search_results.htm?text_curr=r33&Search.x=0&Search.y=0&Search_Type=Activity\">R33</a> Exploratory/Developmental Grants Phase II",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3962995,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Innovative Molecular Analysis Technologies (IMAT) Launch",
+		"startDate":"1998-12-01 09:31:18",
+		"endDate":"1998-12-01 09:31:18",
+		"text":"",
+		"fullText": "NCI established the IMAT program to support the development of next-generation analytical methodologies and tools that have the potential to revolutionize the way that research can be pursued.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://innovation.cancer.gov/",
+		"media":[{
+			"id":2174152,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Innovative_Molecular_Analysis_Technologies_IMAT_Launch.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3963011,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"BSA Received Report of IMAT",
+		"startDate":"2000-11-16 09:31:18",
+		"endDate":"2000-11-17 09:31:18",
+		"text":"",
+		"fullText": "Advised future PI meetings should be posted on OTIR website; reauthorization/reissuance of all funding opportunities for 3 years as program announcement and referral (PAR).",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/archive/bsa1100/bsa1100.pdf",
+		"media":[]				
+	},{
+		"id":3963029,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"BSA Reported IMAT Involved in New Grant Mechanism Phased Innovation Award",
+		"startDate":"2001-06-25 09:31:18",
+		"endDate":"2001-06-26 09:31:18",
+		"text":"",
+		"fullText": "",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/archive/bsa0601/bsa0601.pdf",
+		"media":[]				
+	},{
+		"id":3963040,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"BSA Received Report of IMAT and Approved Three RFA Concepts",
+		"startDate":"2003-06-26 09:31:18",
+		"endDate":"2003-06-27 09:31:18",
+		"text":"",
+		"fullText": "The R33 mechanism is in companionship with SBIR/STTR mechanisms designed for small businesses.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0603/26jun03mins.pdf",
+		"media":[]				
+	},{
+		"id":3963250,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"National Biospecimen Network (NBN) Blueprint Published",
+		"startDate":"2003-09-02 09:31:18",
+		"endDate":"2003-09-02 09:31:18",
+		"text":"",
+		"fullText": "The NBN provides key infrastructure to harness the potential of new technologies for cancer research, while ensuring that the privacy interests of biospecimen donors are preserved.It creates a comprehensive framework for sharing and comparing  research results through arobust, flexible, scalable,and secure bioinformatics system that supports the collection, processing, storage, annotation, and distribution of biospecimens and data using standard operating procedures based on best practices.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://biospecimens.cancer.gov/resources/publications/reports/nbn.asp",
+		"media":[{
+			"id":2174211,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/National_Biospecimen_Network_Blueprint_Published.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3963281,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCAB Received Update on IMAT Program",
+		"startDate":"2004-06-02 09:31:18",
+		"endDate":"2004-06-03 09:31:18",
+		"text":"",
+		"fullText": "",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/ncab/130_0604/02jun04mins.pdf",
+		"media":[]				
+	},{
+		"id":3963301,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Analysis of NCI-Suport Biospecimen Resources Reported to National Cancer Advisory Board (NCAB)",
+		"startDate":"2004-11-30 01:53:14",
+		"endDate":"2004-12-01 01:53:14",
+		"text":"",
+		"fullText": "NCI addresses the goals of (1) providing information on the makeup, quality, responsiveness, cost effectiveness, and degree of patient protection of resources and (2) determining the extent to which they are aligned to optimize and accelerate the discovery, development, and delivery of genomic-­and proteomic­based cancer interventions.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/ncab/132_1104/30nov04mins.pdf",
+		"media":[]				
+	},{
+		"id":3963422,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"BSA Received Report from Dr. Richard Smith, Battelle Fellow, William R. Wiley Environmental Molecular Sciences Laboratory on 1998 IMAT Grant: Advances in Mass Spectrometry in Serum-­Based Proteomics",
+		"startDate":"2005-03-01 01:53:14",
+		"endDate":"2005-03-01 01:53:14",
+		"text":"",
+		"fullText": "",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://dceg.cancer.gov/research/how-we-study/genomic-studies/cgems-summary",
+		"media":[]				
+	},{
+		"id":3963440,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"National Biospecimen Network (NBN) Update to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2005-06-27 22:35:24",
+		"endDate":"2005-06-28 22:35:24",
+		"text":"",
+		"fullText": "The NBN is a plan for beginning to analyze how to ensure that biospecimen repositories are positioned to support \"big science\" as well as R01 science.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0605/27jun05mins.pdf",
+		"media":[]				
+	},{
+		"id":3963482,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCAB Received Update on Human Cancer Genome Project that Referenced IMAT Program",
+		"startDate":"2005-09-20 21:47:53",
+		"endDate":"2005-09-21 21:47:53",
+		"text":"",
+		"fullText": "",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/ncab/135_0905/20sep05mins.pdf",
+		"media":[]				
+	},{
+		"id":3963517,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCAB Received Extensive Progress Report on IMAT",
+		"startDate":"2006-09-06 21:00:22",
+		"endDate":"2006-09-07 21:00:22",
+		"text":"",
+		"fullText": "",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/ncab/139_0906/06sep06mins.pdf",
+		"media":[]				
+	},{
+		"id":3963526,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Biospecimen Research Network (BRN) Launch",
+		"startDate":"2006-11-01 21:00:22",
+		"endDate":"2006-11-01 21:00:22",
+		"text":"",
+		"fullText": "BRN began to systematically address the impact of specific variables in individual specimen types on molecular data from given analysis platforms.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://biospecimens.cancer.gov/researchnetwork/default.asp",
+		"media":[{
+			"id":2174221,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Biospeciment_Research_Network_Launch.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3963542,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Biospecimen Research to Enable Molecular Medicine Update to the NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2007-06-28 21:00:22",
+		"endDate":"2007-06-29 21:00:22",
+		"text":"",
+		"fullText": "BSA receives a report on the BRN that, by using a systematic, comprehensive approach to improve biospecimen quality for research and clinical medicine, the NCI has developed two state-­of-­the-­science guidances for biobanking: NCI Best Practices for Biospecimen Resources and Biospecimen Resource Evaluation Tool (BRET).",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0607/28jun07mins.pdf",
+		"media":[]				
+	},{
+		"id":3963680,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"BSA Received Report on IMAT and Approved Resistance of IMAT RFA Extending R21 to 3 Years and Not Linking R21 and R33 Grants",
+		"startDate":"2007-06-28 21:00:22",
+		"endDate":"2007-06-29 21:00:22",
+		"text":"",
+		"fullText": "",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0607/28jun07mins.pdf",
+		"media":[]				
+	},{
+		"id":3963694,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"First Annual Biospecimen Research Network Symposium: Advancing Cancer Research Through Biospecimen Science",
+		"startDate":"2008-03-13 21:00:22",
+		"endDate":"2008-03-14 21:00:22",
+		"text":"",
+		"fullText": "The primary goal of the symposium was to highlight the significant impact of pre-­analytical biospecimen variables on cancer research and molecular medicine.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://biospecimens.cancer.gov/meeting/brnsymposium/2008/",
+		"media":[]				
+	},{
+		"id":3963712,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Bioeconomics Workshop",
+		"startDate":"2008-06-03 21:00:22",
+		"endDate":"2008-06-03 21:00:22",
+		"text":"",
+		"fullText": "“Economic Considerations for Implementing the NCI Best Practices for Biospecimen Resources”.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://jncimono.oxfordjournals.org/content/2011/42.toc",
+		"media":[]				
+	},{
+		"id":3963742,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Second Annual Biospecimen Research Network Symposium: Advancing Cancer Research Through Biospecimen Science",
+		"startDate":"2009-03-16 21:00:22",
+		"endDate":"2009-03-18 21:00:22",
+		"text":"",
+		"fullText": "The primary goal of the symposium was to highlight the significant impact of pre-­analytical biospecimen variables on cancer research and molecular medicine. Updates on research projects focused on preanalytical biospecimen variables.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://biospecimens.cancer.gov/meeting/brnsymposium/2009/",
+		"media":[]				
+	},{
+		"id":3963755,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Administrative Working Group Established to Provide Planning Recommendations with Respect to the caHUB",
+		"startDate":"2009-05-01 21:00:22",
+		"endDate":"2009-05-01 21:00:22",
+		"text":"",
+		"fullText": "caHUB Administration Working Group (AWG) included a wide range of experts and opinion leaders across relevant disciplines to produce key recommendations on components necessary to establish the caHUB. This was accomplished by formation of a series of strategic and operations subgroups that met over a period of approximately 9 months to develop recommendations, standard operating procedures (SOPs), best practices, research findings, and issues for consideration.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://cahub.cancer.gov/development/",
+		"media":[]				
+	},{
+		"id":3963779,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Third Annual Biospecimen Research Network Symposium: Advancing Career Research through Biospecimen Science",
+		"startDate":"2010-03-08 21:00:22",
+		"endDate":"2010-03-08 21:00:22",
+		"text":"",
+		"fullText": "The primary goal of the symposium was to highlight the significant impact of pre-­analytical biospecimen variables on cancer research and molecular medicine. Updates on research projects focused on preanalytical biospecimen variables.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0310/08mar10mins.pdf",
+		"media":[]				
+	},{
+		"id":3963818,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"SBIR Development Center Presented New SBIR/Small Business Technology Transfer (STTR) Concept to Support IMAT",
+		"startDate":"2010-03-08 21:00:22",
+		"endDate":"2010-03-08 21:00:22",
+		"text":"",
+		"fullText": "RFA for single SBIR (R43/R44) approved.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0310/08mar10mins.pdf",
+		"media":[]				
+	},{
+		"id":3963826,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Workshop on Release of Research Results to Participants in Biospecimen Studies",
+		"startDate":"2010-07-08 21:00:22",
+		"endDate":"2010-07-09 21:00:22",
+		"text":"",
+		"fullText": "This workshop was planned to develop much-­needed best practices and guidance on the sharing of findings from research on biospecimens with human research participants because the organizers recognize that the research community does not have consistent policies or best practices on the subject; that researchers, institutions, and institutional review boards (IRBs) might not be averse to sharing research findings; and that there is even less consensus concerning the disclosure of individual research results to study participants.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://biospecimens.cancer.gov/global/pdfs/NCI_Return_Research_Results_Summary_Final-508.pdf",
+		"media":[]				
+	},{
+		"id":3963850,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Common Fund Genotype-Tissue Expression (GTEx) Launch",
+		"startDate":"2010-10-01 07:54:35",
+		"endDate":"2010-10-01 07:54:35",
+		"text":"",
+		"fullText": "OBBR's caHUB begins the first collection of biospecimens for the NIH Common Fund's GTEx program which aims to study human gene expression and regulation in multiple tissues, providing valuable insights into the mechanisms of gene regulation and, in the future, its disease-­related perturbations.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"https://commonfund.nih.gov/GTEx/index",
+		"media":[{
+			"id":2174229,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Common_Fund_Genotype-Tissue_Expression.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3963862,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Fourth Annual Biospecimen Research Network Symposium: Advancing Cancer Research through Biospecimen Science",
+		"startDate":"2011-03-28 07:54:35",
+		"endDate":"2011-03-29 07:54:35",
+		"text":"",
+		"fullText": "The primary goal of the symposium was to highlight the significant impact of pre-­analytical biospecimen variables on cancer research and molecular medicine. Updates on research projects focused on preanalytical biospecimen variables.",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://biospecimens.cancer.gov/meeting/brnsymposium/2011/",
+		"media":[]				
+	},{
+		"id":3963878,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"BSA Received Internal Evaluative Update and Authorized Resistance of Four RFAs (R21/R33) through FY2013",
+		"startDate":"2011-11-01 01:54:35",
+		"endDate":"2011-11-01 01:54:35",
+		"text":"",
+		"fullText": "",
+		"category":"248854",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa1111/1115%20Dickherber.pdf",
+		"media":[{
+			"id":2174245,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/BSA_Received_Internal_Evaluative_Update.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3964254,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Human Cancer Genome Project Update to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2005-09-20 01:54:35",
+		"endDate":"2005-09-21 01:54:35",
+		"text":"",
+		"fullText": "The goal of this particular project is to initiate a 3-­year pilot to address key questions, to determine the feasibility of a full-­scale project that will ultimately facilitate development of a complete “catalogue” of all genetic alterations in cancer.",
+		"category":"248856",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/ncab/135_0905/20sep05mins.pdf",
+		"media":[]				
+	},{
+		"id":3964277,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The Cancer Genome Project Proposal Presented to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2005-11-14 01:54:35",
+		"endDate":"2005-11-14 01:54:35",
+		"text":"",
+		"fullText": "The mission of this proposed initiative is to develop systematic approach to identifying genetic alterations of cancer that have meaningful clinical impact on a few rationally selected cancer types.",
+		"category":"248856",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa1105/14nov05mins.pdf",
+		"media":[]				
+	},{
+		"id":3970144,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The Cancer Genome Atlas (TCGA) Approval",
+		"startDate":"2005-12-01 21:38:19",
+		"endDate":"2005-12-01 21:38:19",
+		"text":"",
+		"fullText": "NCI and the NHGRI launch TCGA as a collaborative 3-­year pilot project to test the feasibility of using large-­scale genome analysis technologies to determine all of the important genomic changes involved in cancer.",
+		"category":"248856",
+		"dateFormat":"auto",
+		"externalLink":"http://cancergenome.nih.gov/newsevents/newsannouncements/news_12_13_2005",
+		"media":[{
+			"id":2168578,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/The_Cancer_Genome_Atlas_Approval.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3970156,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The Cancer Genome Atlas (TCGA) Pilot Project Launch",
+		"startDate":"2006-10-03 21:38:19",
+		"endDate":"2006-10-03 21:38:19",
+		"text":"",
+		"fullText": "Awards were made to seven institutions to work as a network using advanced and complementary analysis technologies to strategically characterize genomic changes involved in the three types of cancers: brain (glioblastoma multiforme), lung(squamouscell), and ovarian serous cancer. Genomic changes studied included deletions, rearrangements, and amplification of large chromosomal segments.",
+		"category":"248856",
+		"dateFormat":"auto",
+		"externalLink":"http://cancergenome.nih.gov/newsevents/newsannouncements/news_10_16_2006",
+		"media":[]				
+	},{
+		"id":3970181,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The Cancer Genome Atlas (TCGA) Awards Funds for Technology Development",
+		"startDate":"2007-07-19 10:21:27",
+		"endDate":"2007-07-19 10:21:27",
+		"text":"",
+		"fullText": "As part of TCGA pilot project, the NIH awarded eight 2-­year grants totaling $3.4 million to support the development of innovative technologies for exploring the genomic underpinnings of cancer.",
+		"category":"248856",
+		"dateFormat":"auto",
+		"externalLink":"http://cancergenome.nih.gov/newsevents/newsannouncements/news_7_2_2007",
+		"media":[]				
+	},{
+		"id":3970530,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The Cancer Genome Atlas (TCGA) Data Portal",
+		"startDate":"2007-10-11 19:40:51",
+		"endDate":"2007-10-11 19:40:51",
+		"text":"",
+		"fullText": "TCGA Data Portal begins providing a platform for researchers to search, download, and analyze datasets pertaining to clinical information associated with cancer tumors and human subjects, genomic characterization, and high-­through put sequencing analysis of the tumor genomes.",
+		"category":"248856",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3970543,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The Cancer Genome Atlas (TCGA) Phase II Approval by NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2008-11-06 19:40:51",
+		"endDate":"2008-11-07 19:40:51",
+		"text":"",
+		"fullText": "The mission of the Network’s pilot project is to assess the feasibility of full-­scale effort to identify and catalogue genomic alterations, including mutations, translocations, methylation of chromatin marks, and gene expression, using three different cancer types: brain, lung, and ovary. The BSA approves TCGA Phase II program, an increase to 20 tumor types beyond those studied in the pilot project.",
+		"category":"248856",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa1108/06nov08mins.pdf",
+		"media":[]				
+	},{
+		"id":3970553,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Genome Characterization Centers and Genome Data Analysis Centers",
+		"startDate":"2009-08-13 19:40:51",
+		"endDate":"2009-08-13 19:40:51",
+		"text":"",
+		"fullText": "Twelve awards were made for both Genome Characterization Centers and Genome Data Analysis Centers.",
+		"category":"248856",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3970560,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"TCGA Holds First Annual Scientific Symposium - Enabling Cancer Research Through TCGA",
+		"startDate":"2011-11-04 19:40:51",
+		"endDate":"2011-11-04 19:40:51",
+		"text":"",
+		"fullText": "Investigators from around the world shared their novel biological discoveries, analytical methods, and translational approaches using TCGA data.",
+		"category":"248856",
+		"dateFormat":"auto",
+		"externalLink":"http://www.capconcorp.com/meeting/2011/TCGA/default.asp",
+		"media":[{
+			"id":2168600,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/TCGA_Holds_First_Annual_Scientific_Symposium.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3970575,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Genome Anatomy Project (CGAP) Update to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2004-11-08 19:40:51",
+		"endDate":"2004-11-09 19:40:51",
+		"text":"",
+		"fullText": "CGAP updates BSA informing members that the explosion of discovery in the biological sciences during the past 30 years has had a tremendous impact on the understanding of basic mechanisms of cellular growth regulation in cancer.",
+		"category":"248857",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa1104/08nov04mins.pdf",
+		"media":[]				
+	},{
+		"id":3972036,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomics and Biomarker Discovery",
+		"startDate":"2004-11-04 14:41:08",
+		"endDate":"2004-11-04 14:41:08",
+		"text":"",
+		"fullText": "Clinical Proteomics and Biomarker Discovery in Cancer Research West Coast Workshop was held.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3971093,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Therapeutically Applicable Research to Generate Effective Treatments (TARGET)",
+		"startDate":"2005-11-02 01:42:59",
+		"endDate":"2005-11-03 01:42:59",
+		"text":"",
+		"fullText": "The NCI Board of Scientific Advisors (BSA) Subcommittee reports to the BSA committee on the background of the TARGET inititative.",
+		"category":"248857",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa1106/02nov06mins.pdf",
+		"media":[]				
+	},{
+		"id":3971108,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"TARGET Initiative Launch",
+		"startDate":"2008-03-13 01:42:59",
+		"endDate":"2008-03-13 01:42:59",
+		"text":"",
+		"fullText": "The goal of NCI's Therapeutically Applicable Research to Generate Effective Treatments (TARGET) Initiative is to identify valid therapeutic targets in childhood cancers so that new, more effective treatments can be rapidly developed.",
+		"category":"248857",
+		"dateFormat":"auto",
+		"externalLink":"http://ocg.cancer.gov/programs/target/projects",
+		"media":[{
+			"id":2168551,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/TARGET_Initiative_Launch.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3971112,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"TARGET Initiative Update to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2009-03-02 13:34:21",
+		"endDate":"2009-03-03 13:34:21",
+		"text":"",
+		"fullText": "The initiative seeks to identify genes altered in childhood cancers that participate in cellular pathways relevant for cancer genesis and progression.The genes will serve astargets for developing diagnostic tools and new therapies.",
+		"category":"248857",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0309/02mar09mins.pdf",
+		"media":[]				
+	},{
+		"id":3971133,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Target Discovery and Development (CTD2) Network Launch",
+		"startDate":"2009-10-16 13:34:21",
+		"endDate":"2009-10-16 13:34:21",
+		"text":"",
+		"fullText": "The CTD² network is project aimed at developing new scientific approaches to accelerate the translation of genomic discoveries into new treatments.",
+		"category":"248857",
+		"dateFormat":"auto",
+		"externalLink":"http://ocg.cancer.gov/programs/ctd2",
+		"media":[{
+			"id":2168563,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Cancer_Target_Discovery_and_Development_Network.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3971192,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Target Discovery and Development (CTD2) Network",
+		"startDate":"2010-06-28 13:34:21",
+		"endDate":"2010-06-28 13:34:21",
+		"text":"",
+		"fullText": "CTD² Networkconcept is approved by NCI BSA.",
+		"category":"248857",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0610/28jun10mins.pdf",
+		"media":[]				
+	},{
+		"id":3971211,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Target Discovery and Development (CTD2) Network Concept Approval by NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2011-03-18 13:34:21",
+		"endDate":"2011-03-18 13:34:21",
+		"text":"",
+		"fullText": "BSA approves CTD² Network RFA concept.",
+		"category":"248857",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0311/presentations/1100Gerhard.pdf",
+		"media":[{
+			"id":2204146,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/CTD2_Network_Concept_Approval_by_NCI.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3971763,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Target and Development (CTD2) Network",
+		"startDate":"2011-05-18 13:34:21",
+		"endDate":"2011-05-18 13:34:21",
+		"text":"",
+		"fullText": "RFA for CTD2 released",
+		"category":"248857",
+		"dateFormat":"auto",
+		"externalLink":"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-11-010.html",
+		"media":[]				
+	},{
+		"id":3971795,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Proteomics Planning Workshop",
+		"startDate":"2002-04-01 13:34:21",
+		"endDate":"2002-04-01 13:34:21",
+		"text":"",
+		"fullText": "Proteomics Planning Workshop was held by the National Cancer Institute, National Human Genome Research Institute, and National Institute of General Medical Sciences.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3971807,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Proteomics for Early Cancer Detection Workshop",
+		"startDate":"2003-04-11 13:34:21",
+		"endDate":"2003-04-11 13:34:21",
+		"text":"",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3971819,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Mouse Proteomics Technologies Initiative Launch",
+		"startDate":"2004-01-01 13:34:21",
+		"endDate":"2004-01-01 13:34:21",
+		"text":"",
+		"fullText": "The NCI Mouse Proteomics Technologies Initiative is team-­based effort designed to use animal models to develop and standardize technologies that help improve the accurate measurement of proteins and peptides linked to cancer processes in order to accelerate biomarker discovery.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3972020,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomics and Biomarker Discovery",
+		"startDate":"2004-09-01 14:41:08",
+		"endDate":"2004-09-01 14:41:08",
+		"text":"",
+		"fullText": "Clinical Proteomics and Biomarker Discovery in Cancer Research East Coast Workshop was held.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3972336,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The Case of Early Detection - BSA Presentation",
+		"startDate":"2004-11-08 14:41:08",
+		"endDate":"2004-11-09 14:41:08",
+		"text":"",
+		"fullText": "",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa1104/08nov04mins.pdf",
+		"media":[]				
+	},{
+		"id":3972342,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"CPTC Phase I Initiative Approval by NCI Executive Committee (EC)",
+		"startDate":"2005-01-04 14:41:08",
+		"endDate":"2005-01-04 14:41:08",
+		"text":"",
+		"fullText": "NCI EC approves CPTC biomarker concept.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3972347,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Proteomic Technologies Informatics Workshop",
+		"startDate":"2005-02-01 14:41:08",
+		"endDate":"2005-02-01 14:41:08",
+		"text":"",
+		"fullText": "",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3972351,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Strategies to Integrate Biomarkers Into Cancer Clinical Trials Workshop",
+		"startDate":"2005-02-01 14:41:08",
+		"endDate":"2005-02-01 14:41:08",
+		"text":"",
+		"fullText": "",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3972354,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Proteomic Affinity/Capture Methods Workshop",
+		"startDate":"2005-03-02 14:41:08",
+		"endDate":"2005-03-02 14:41:08",
+		"text":"",
+		"fullText": "",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3972356,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"CPTC Presented to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2005-06-27 14:41:08",
+		"endDate":"2005-06-28 14:41:08",
+		"text":"",
+		"fullText": "The Clinical Proteomics Technology Initiative is seeking to integrate approaches to develop and enhance technology capabilities, enhance public resources for investigator-­initiated research on protein discovery, accelerate these discovery efforts, and enhance the knowledge base. NCI BSA approves the initiative.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0605/27jun05mins.pdf",
+		"media":[]				
+	},{
+		"id":3972362,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Proteomic Technologies Reagents Resource Workshop",
+		"startDate":"2005-12-02 14:41:08",
+		"endDate":"2005-12-02 14:41:08",
+		"text":"",
+		"fullText": "The Clinical Proteomics Technology Initiative is seeking to integrate approaches to develop and enhance technology capabilities, enhance public resources for investigator­initiated research on protein discovery, accelerate these discovery efforts, and enhance the knowledge base. NCI BSA approves the initiative.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3972364,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomic Technologies for Cancer (CPTC) Phase I Launch",
+		"startDate":"2006-10-03 14:41:08",
+		"endDate":"2006-10-03 14:41:08",
+		"text":"",
+		"fullText": "CPTC was launched to foster the building of an integrated foundation of proteomic technologies, data, reagents and reference materials, and analysis systems to systematically advance the application of protein science to accelerate discovery and clinical research in cancer.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/",
+		"media":[]				
+	},{
+		"id":3972370,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomic Technologies Initiative for Cancer Update to the NCI National Cancer Advisory Board (NCAB)",
+		"startDate":"2006-11-30 01:49:45",
+		"endDate":"2006-12-01 01:49:45",
+		"text":"",
+		"fullText": "On September 2, five awards to lead institutions were announced for the Clinical Proteomic Technology Assessment for Cancer initiative. Breast cancer has been chosen as the common human cancer type to be studied, and the first benchmark study, a protein mix study, is ongoing.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/ncab/140_1106/30nov06mins.pdf",
+		"media":[]				
+	},{
+		"id":3972376,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomic Technologies for Cancer Initiative Update to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2007-03-06 19:05:39",
+		"endDate":"2007-03-06 19:05:39",
+		"text":"",
+		"fullText": "CPTCI is a 5-­year initiative that addresses barriers in proteomic technologies, reagents, and systems early in the pipeline by building foundation of technologies, data, reagents and standards, analysis systems, and infrastructure that will help systematically advance the understanding of protein biology in cancer.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0310/presentations/index.htm",
+		"media":[]				
+	},{
+		"id":3972385,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomic Technologies for Cancer (CPTC) Phase I update to National Cancer Advisory Board (NCAB)",
+		"startDate":"2008-02-05 19:05:39",
+		"endDate":"2008-02-05 19:05:39",
+		"text":"",
+		"fullText": "The project was initiated to develop sound basis for the discovery of biomarkers; validation will occur through other means. The project has three distinct components: (1) CPTAC Centers, which are a network of laboratories that serve as clinical proteomic technology centers of excellence throughout the United Statesand provide expertise in mass spectrometry, (2) the development or enhancement of technologies and the development of algorithm computational sciences that assist individual investigators, and (3) reagents and resources core.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/ncab/145_0208/presentations/Tuesday/230pm_Rodriguez.pdf",
+		"media":[{
+			"id":2204575,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Clinical_Proteomic_Technologies_for_Cancer_Phase_I.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3972396,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"International Summit on Proteomics",
+		"startDate":"2008-08-01 03:58:46",
+		"endDate":"2008-08-01 03:58:46",
+		"text":"",
+		"fullText": "International Summit on Proteomics Data Release and Sharing Policy: Amsterdam Principles was held.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3972400,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomic Technologies for Cancer (CPTC) Update to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2009-06-22 03:58:46",
+		"endDate":"2009-06-22 03:58:46",
+		"text":"",
+		"fullText": "The CPTC program was established in October 200 to support biomarker development and address the issues identified assignificant barriers to progress that include (1) experimental design, (2) technological or technical barriers,(3) biospecimen collection,and (4) data acquisition, analysis, and reporting. The Clinical Proteomics Technology Assessment Center Network involves five major centers and a number of allied institutions.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0609/22jun09mins.pdf",
+		"media":[]				
+	},{
+		"id":3972402,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Implementation of a New Cancer Biomarker Development Pipeline",
+		"startDate":"2009-09-09 03:58:46",
+		"endDate":"2009-09-09 03:58:46",
+		"text":"",
+		"fullText": "Clinical Proteomic Technologies for Cancer Initiative Reissuance Strategic Workshop –\"Implementation of a New Cancer Biomarker Development Pipeline,\" was held.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3972405,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomic Technologies for Cancer (CPTC) Phase II Concept Approval by NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2010-03-08 10:11:42",
+		"endDate":"2010-03-08 10:11:42",
+		"text":"",
+		"fullText": "CPTC BSA approves CPTC reissuance. The CPTAC initiative was launched in 2006 to address technical barriers related to discovery and verification in proteomics, as well as issues concerning biospecimens, statistical issues in experimental design, data acquisition and analysis, and lack of standards and high quality reagents.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0310/08mar10mins.pdf",
+		"media":[]				
+	},{
+		"id":3972412,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomic Technologies for Cancer (CPTC) Initiatives: Proteome Characterization Centers",
+		"startDate":"2010-06-01 10:11:42",
+		"endDate":"2010-06-01 10:11:42",
+		"text":"",
+		"fullText": "RFA for CPTC: Proteome Characterization Centers released.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-10-016.html",
+		"media":[]				
+	},{
+		"id":3972414,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Establishing the Standards in Clinical Proteomics",
+		"startDate":"2010-09-09 10:11:42",
+		"endDate":"2010-09-09 10:11:42",
+		"text":"",
+		"fullText": "Clinical Proteomic Technologies for Cancer meeting was held: \"Establishing the Standards in Clinical Proteomics.\"",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/eprotein/november2010/features/fourthmeeting",
+		"media":[{
+			"id":2140292,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Establishing_the_Standards_in_Clinical_Proteomics.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3972420,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Office of Cancer Clinical Proteomics Research (OCCPR) Announces Launch of a Clinical Proteomic Tumor Analysis Consortium",
+		"startDate":"2011-08-17 10:11:42",
+		"endDate":"2011-08-17 10:11:42",
+		"text":"",
+		"fullText": "",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/programs/cptacnetwork",
+		"media":[]				
+	},{
+		"id":3972429,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"American Association for Cancer Research (AACR)",
+		"startDate":"2013-04-10 10:11:42",
+		"endDate":"2013-04-10 10:11:42",
+		"text":"",
+		"fullText": "Dr. Emily Boja presents: Building a Comprehensive Cancer Atlas",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://cssi.cancer.gov/pdf/1-NAS_Singapore-Final-051513-JL-tagged.pdf",
+		"media":[{
+			"id":2174251,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/American_Association_for_Cancer_Research_April-2013.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3972424,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Statistical Experimental Design Considerations in Research Studies Using Proteomic Technologies",
+		"startDate":"2011-08-17 10:11:42",
+		"endDate":"2011-08-20 10:11:42",
+		"text":"",
+		"fullText": "“Joint Workshop of the National Cancer Institute, National Heart, Lung and Blood Institute, and American Association for Clinical Chemistry” convened in Bethesda, MD to help address issues of statistical experimental design.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990818,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"PS-OC Summer Meeting: Theoretical Viewpoints Emerging Around the PS-OC Network",
+		"startDate":"2013-08-01 16:27:55",
+		"endDate":"2013-08-01 16:27:55",
+		"text":"",
+		"fullText": "This workshop brought together theoreticians, experimentalists, and clinicians from inside and outside the PS-­OC Network to explore ways of validating and integrating new concepts and frameworks that have emerged over the first 4 years of the PS-OC program.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3983325,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Alliance for Nanotechnology in Cancer (ANC)",
+		"startDate":"2003-05-15 20:20:59",
+		"endDate":"2003-05-15 20:20:59",
+		"text":"",
+		"fullText": "Cancer Nanotechnology Extramural Working Group recommends development of ANC.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3983341,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Nanotechnology Phase I Approval by NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2004-07-12 20:20:59",
+		"endDate":"2004-07-12 20:20:59",
+		"text":"",
+		"fullText": "Phase I: Alliance for Nanotechnology in Cancer(ANC) is an integrated initiative to transform clinical oncology and inform basic cancer research through the directed application of nanotechnology. NCI BSA voted to approve the proposal.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0704/12jul04mins.pdf",
+		"media":[]				
+	},{
+		"id":3983352,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Alliance for Nanotechnology in Cancer (ANC) Phase I RFAs Released",
+		"startDate":"2004-12-11 20:20:59",
+		"endDate":"2004-12-11 20:20:59",
+		"text":"",
+		"fullText": "RFAs for Centers of Cancer Nanotechnology Excellence (CCNE), Cancer Nanotechnology Platform Partnerships (CNPP), and Multidisciplinary Career Development in Cancer Nanotechnology Research were released.;xNLx;;xNLx;VIEW MORE LINKS;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/rfa-ca-05-024.html\">Link 1</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/rfa-ca-05-025.html\">Link 2</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/rfa-ca-05-026.html\">Link 3</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3983370,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Alliance for Nanotechnology in Cancer (ANC) Phase I Launch",
+		"startDate":"2005-10-14 12:59:00",
+		"endDate":"2005-10-14 12:59:00",
+		"text":"",
+		"fullText": "The National Cancer Institute announces new $144M, 5-­year initiative to develop and apply nanotechnology to cancer. The NCI ANC is engaged in efforts to harness the power of nanotechnology to radically change the way we diagnose, treat, and prevent cancer.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://nano.cancer.gov/action/news/news_release_2005_10_03.asp",
+		"media":[]				
+	},{
+		"id":3983379,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Phase I: Alliance for Nanotechnology in Cancer (ANC) Update to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2006-06-29 12:59:00",
+		"endDate":"2006-06-30 12:59:00",
+		"text":"",
+		"fullText": "The NCI ANC was launched in 2004 with a series of goals in areas thought to be critical to the future of medicine and molecular oncology. It is built on multidisciplinary team science and theComponents of the Alliance are the (1) Centers of Cancer Nanotechnology Excellence (CCNE),(2) Nanotechnology Platforms for Cancer Research allied with the various centers, (3) Multidisciplinary Research Teams, which involve training and interagency collaborations, and (4) Nanotechnology Characterization Laboratory (NCL).",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0606/29jun06mins.pdf",
+		"media":[]				
+	},{
+		"id":3983398,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Nanotechnology: In vitro Diagnostic and Prevention Therapy and Post-Treatment In vivo Diagnostic and Imaging",
+		"startDate":"2008-03-28 12:59:00",
+		"endDate":"2008-03-28 12:59:00",
+		"text":"",
+		"fullText": "Strategic Workshops on Cancer Nanotechnology were held: In vitro Diagnostic and Prevention Therapy and Post-­Treatment In vivo Diagnostic and Imaging workshops.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://nano.cancer.gov/objects/pdfs/Strategic_Workshops_on_Cancer_Nanotechnology_-_CancerRes_final_508.pdf",
+		"media":[]				
+	},{
+		"id":3983406,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Phase I: Alliance for Nanotechnology in Cancer (ANC) update to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2008-06-23 11:32:42",
+		"endDate":"2008-06-24 11:32:42",
+		"text":"",
+		"fullText": "Dr. Grodzinski updated the members on the major accomplishments of the NCI Alliance for Nanotechnology in Cancer over the last 2.5 years. He noted that researchers had published 475 journal articles, filed 15 patents, and formed more than 3 companies associated with nanotechnology diagnostics and therapy. Further, leveraged funding has included more than $80M of new, peer reviewed government research funds and $15M from philanthropic sources to establish infrastructure and perform research. The eight Centers for Cancer Nanotechnology Excellence (CCNEs) and 1 Cancer Nanotechnology Platform Partnerships (CNPPs) are staffed by multidisciplinary teams working toward the common goals finding clinical applications for nanotechnology in cancer.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0608/23jun08mins.pdf",
+		"media":[]				
+	},{
+		"id":3983423,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Phase II: Alliance for Nanotechnology in Cancer (ANC) Approval by NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2008-11-06 18:02:54",
+		"endDate":"2008-11-07 18:02:54",
+		"text":"",
+		"fullText": "BSA approves reissuance of Phase II: ANC. Reissuance will provide for an increased focus on complete technology solutions leveraging collaborative efforts within the centers and across centers and platforms, including are designed training program.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa1108/06nov08mins.pdf",
+		"media":[]				
+	},{
+		"id":3983437,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Alliance for Nanotechnology in Cancer (ANC) Phase II RFAs Released",
+		"startDate":"2009-05-27 18:02:54",
+		"endDate":"2009-05-27 18:02:54",
+		"text":"",
+		"fullText": "RFAs for Centers for Cancer Nanotechnology Excellence (CCNE) and Cancer Nanotechnology Platform Partnerships (CNPP) were released.;xNLx;;xNLx;VIEW MORE LINKS;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-09-012.html\">Link 1</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-09-013.html\">Link 2</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3983468,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Alliance for Nanotechnology in Cancer (ANC) Phase II Training RFAs Released",
+		"startDate":"2009-10-16 18:02:54",
+		"endDate":"2009-10-16 18:02:54",
+		"text":"",
+		"fullText": "RFAs for Cancer Nanotechnology Training Centers (CNTC) and Pathway to Independence Award in Cancer Nanotechnology Research were released.;xNLx;;xNLx;VIEW MORE LINKS;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-09-014.html\">Link 1</a>;xNLx;<a href=\"http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-09-015.html\">Link 2</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3983522,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Alliance for Nanotechnology in Cancer (ANC) Update to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2010-03-08 18:02:54",
+		"endDate":"2010-03-08 18:02:54",
+		"text":"",
+		"fullText": "Dr. Piotr Grodzinski, Director, Nanotechnology for Cancer Program, provided an overview of the NCI Alliance for Nanotechnology in Cancer. Dr. Grodzinski informed members that the Alliance supports translational research to develop ways to use nano-­materials to develop new ways to detect cancer, understand the progression of the disease, and improve delivery and efficacy of cancer therapeutics. The Alliance has Centers of Cancer Nanotechnology Excellence and 1 Cancer Nanotechnology Platform Partnerships. Phase II has expanded the initiative to include multidisciplinary training awards. The Alliance has produced more than 1,000 peer-­reviewed journal articles; established 8 clinical trials; developed commercialization partnerships with 50 plus companies; and filed more than 200 disclosures and patents. The Alliance also has obtained additional funding from grants, industry, and venture capital investors.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0310/08mar10mins.pdf",
+		"media":[]				
+	},{
+		"id":3983560,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Phase II: Alliance for Nanotechnology in Cancer (ANC) Launch",
+		"startDate":"2010-09-17 00:46:59",
+		"endDate":"2010-09-17 00:46:59",
+		"text":"",
+		"fullText": "Phase II launches with an investment of approximately $30M per year for the next years.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3983577,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"American Association for Cancer Research (AACR)",
+		"startDate":"2013-04-10 00:46:59",
+		"endDate":"2013-04-10 00:46:59",
+		"text":"",
+		"fullText": "Dr. Dorothy Farrell presents: The Office for Cancer Nanotechnology Research: Support and Resources for Cancer Nanotechnology Research",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://cssi.cancer.gov/pdf/AACR-CSSIsession-April2013-04-02-2013-508.pdf",
+		"media":[{
+			"id":2168510,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/American_Association_for_Cancer_Research.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3983605,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Phase III of the Alliance for Nanotechnology in Cancer approved by NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2014-01-10 00:46:59",
+		"endDate":"2014-01-10 00:46:59",
+		"text":"",
+		"fullText": "The third phase of Alliance awards will include Centers for Cancer Nanotechnology Excellence focused on developing and clinically translating nanotechnology applications for cancer diagnosis and treatment, innovative U01 projects devoted to discovery research in cancer nanotechnology, and dedicated funds for T3 training awards in cancer nanotechnology.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0314/agenda.pdf",
+		"media":[]				
+	},{
+		"id":3983625,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Integrating and Leveraging the Physical Sciences to Open a New Frontier in Oncology",
+		"startDate":"2008-02-23 00:46:59",
+		"endDate":"2008-02-23 00:46:59",
+		"text":"",
+		"fullText": "\"Integrating and Leveraging the Physical Sciences to Open aNew Frontier in Oncology\" think tank convened in Washington, DC.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://opso.cancer.gov/report/ps1.aspx",
+		"media":[{
+			"id":2168605,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Integrating_and_Leveraging_the-Physical_Sciences.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3983638,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"New Look at Evolution and Evolutionary Theory in Cancer",
+		"startDate":"2008-07-01 00:46:59",
+		"endDate":"2008-07-01 00:46:59",
+		"text":"",
+		"fullText": "\"A New Look at Evolution and Evolutionary Theory in Cancer\" think tank convened in Washington, DC.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://opso.cancer.gov/report/ps2.aspx",
+		"media":[{
+			"id":2204658,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/A_New_Look_at_Evolution_and_Evolutionary_Theory_in_Cancer_July2008.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3983654,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Physical Sciences-Based Frontiers in Oncology: The Coding, Decoding, Transfer, and Translation of Information in Cancer",
+		"startDate":"2008-10-29 14:04:33",
+		"endDate":"2008-10-31 14:04:33",
+		"text":"",
+		"fullText": "\"Physical Sciences-­Based Frontiers in Oncology: The Coding, Decoding, Transfer, and Translation of Information in Cancer \"think tank convened in Washington, DC.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://opso.cancer.gov/report/ps3.aspx",
+		"media":[{
+			"id":2135761,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/The_Coding_Decoding_Transfer_and_Translation_of_Information_in_Cancer.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3989625,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Physical Sciences Oncology Program Presented to NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2008-11-06 00:46:59",
+		"endDate":"2008-11-06 00:46:59",
+		"text":"",
+		"fullText": "The NCI proposes to build a collaborative network of Physical Sciences–Oncology Centers that will bring physical scientists and cancer researchers together to address key questions in cancer research that involve physical laws and principles.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://videocast.nih.gov/Summary.asp?File=14760&bhcp=1",
+		"media":[]				
+	},{
+		"id":3989650,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Physical Sciences-Oncology Centers (PS-OC)",
+		"startDate":"2008-12-11 01:53:27",
+		"endDate":"2008-12-11 01:53:27",
+		"text":"",
+		"fullText": "RFA for PS-­OC (U54) was released.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://www.grants.nih.gov/grants/guide/rfa-files/RFA-CA-09-009.html",
+		"media":[]				
+	},{
+		"id":3989683,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Physical Sciences-Oncology Centers (PS-OC) Launch",
+		"startDate":"2009-10-10 10:53:16",
+		"endDate":"2009-10-10 10:53:16",
+		"text":"",
+		"fullText": "The NCI explores new and innovative approaches to better understand and control cancer through initiatives that enable the convergence of the physical sciences with cancer biology. The Physical Sciences in Oncology initiative will establish scientific teams and individual scientists from the fields of physics, mathematics, chemistry, and engineering to examine cancer using approaches that have not been followed in cancer research to date.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://physics.cancer.gov/centers/",
+		"media":[{
+			"id":2168623,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Physical_Sciences_Oncology_Centers_Launch.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3989742,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"First Annual NCI Physical Sciences-Oncology Centers (PS-OC) Network Investigators Meeting",
+		"startDate":"2010-04-22 04:28:12",
+		"endDate":"2010-05-15 04:28:12",
+		"text":"",
+		"fullText": "First Annual NCI PS-­OC Network Investigators Meeting was held in Washington, DC, to share recent outputs, provide avenue for future collaboration within the PS-­OC Network, and discuss governance and upcoming trans-­network projects.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3989994,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCI Physical Sciences-Oncology Centers (PS-OC) Network Meeting",
+		"startDate":"2010-08-12 01:52:53",
+		"endDate":"2010-08-17 01:52:53",
+		"text":"",
+		"fullText": "NCI's PS-­OC Network Meeting was held with 42 PS-­OC investigators to develop innovative pilot project applications which were reviewed by an external panel of extramural experts, resulting in the awards and funding to successful applicants.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990020,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Joint Award Program with NSF for Physical and Life Science Early Research (PLIER) Awards",
+		"startDate":"2010-08-20 03:50:19",
+		"endDate":"2010-09-28 03:50:19",
+		"text":"",
+		"fullText": "The NCI and the National Science Foundation (NSF) created this joint award program to fund research atthe intersection of the engineering/physical sciences and the life sciences. A “Dear Colleague” letter was issued by the NSF to solicit proposals in August 2010. Six projects were approved for funding in July 2011 for a total investment of $2.7 million over 3 years.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://www.nsf.gov/pubs/2010/nsf10065/nsf10065.jsp?org=NSF",
+		"media":[]				
+	},{
+		"id":3990046,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Launch of the PS-OC Network Bioresource Core Facility (PBCF)",
+		"startDate":"2010-09-09 09:28:44",
+		"endDate":"2010-09-09 09:28:44",
+		"text":"",
+		"fullText": "The PS-­OC Network Bioresource Core Facility (PBCF) is a central resource for all members of the Physical Sciences-­Oncology Centers (PS-­OC) Network. The PBCF serves as a centralized biorepository and biodistributor providing the PS-­OC Network with common stocks of an authenticated set of non malignant and cancerous cell lines, cell culture reagents, and related standard operating protocols. Investigators outside the PS-­OC Network who agree to actively participate in data sharing and integration efforts can become partofthe Network.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://opso.cancer.gov/bioresources/",
+		"media":[{
+			"id":2173776,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Launch_of_the_PS-OC_Network_Biosource_Core_Facility.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3990069,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Launch of the Interdisciplinary Team Reporting, Analysis, and Query Resource (ITRAQR) and the PS-OC Prospective Evaluation",
+		"startDate":"2010-11-12 01:13:13",
+		"endDate":"2010-11-12 01:13:13",
+		"text":"",
+		"fullText": "The Interdisciplinary Team Reporting, Analysis, and Query Resource (iTRAQR) was developed to help prospectively evaluate the outputs of the PS-­OC Program, such as publications, collaborations, field convergence, courses, trainee exchanges and transitions, and patents. Research progress, outputs, and collaborative activities are monitored on an ongoing basis through comprehensive semi-­annual progress reports. iTRAQR organizes progress report data and facilitates convenient and flexible querying, exporting, and visualization of data. The results of such analyses are used to monitor the extent to which the research output of the investigators and the Centers furthers the aims of the PS-­OC Program.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990107,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Data Jamboree for the PS-OC Cell Line Pilot Study",
+		"startDate":"2011-01-20 23:46:55",
+		"endDate":"2011-01-20 23:46:55",
+		"text":"",
+		"fullText": "A panel of cell lines was propagated and distributed to PS-­OC investigators to culture under common standard conditions. Investigators conducted unique physical science measurements on the cell lines to share results and cross-­compare datasets at the jamboree meeting in Scottsdale, Arizona.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990127,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Second Annual NCI Physical Sciences-Oncology Centers (PS-OC) Network Investigators Meeting",
+		"startDate":"2011-04-13 05:42:36",
+		"endDate":"2011-04-13 05:42:36",
+		"text":"",
+		"fullText": "The Second Annual NCI PS-­OC Network Investigators Meeting was hosted by the Scripps PS-­OC and held in La Jolla, California. The meeting offered the opportunity to share recent findings and insights, review and award the second round of PS-­OC Trans-­Network pilot projects, and build future collaborations across the PS-­OC Network.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990147,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Joint Award Program with the NSF for Physical and Life Science Early Research (PLIER) Awards",
+		"startDate":"2011-11-16 01:01:36",
+		"endDate":"2011-11-16 01:01:36",
+		"text":"",
+		"fullText": "The NationalScience Foundation (NSF) in collaboration with the NCI published a program announcement in November 201 to solicit a second round of proposals to fund research at the intersection of the engineering/physical sciences and the life sciences. Six projects were approved for funding in July 2012 for a total investment of $3.3 million over 3 years.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://www.nsf.gov/pubs/2012/nsf12514/nsf12514.htm",
+		"media":[]				
+	},{
+		"id":3990216,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Publication of Nature Reprint Collection \"Physical Sciences in Oncology\"",
+		"startDate":"2011-12-14 12:52:58",
+		"endDate":"2011-12-14 12:52:58",
+		"text":"",
+		"fullText": "This collection of feature articles from Nature brought together several research articles and reviews published during the first 2 years of the PS-­OC Program. The collection shows how the trans-disciplinary approaches of physical scientists and cancer researchers can guide cancer research into new directions.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://issuu.com/argos/docs/physics-of-cancer",
+		"media":[{
+			"id":2173846,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Publication_of_Nature_Reprint_Collection.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3990260,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"PS-OC Network Scientific Updates Meeting for Principal Investigators and Senior Scientific Investigators",
+		"startDate":"2011-12-14 23:46:53",
+		"endDate":"2011-12-14 23:46:53",
+		"text":"",
+		"fullText": "PS-­OC Network Principal Investigators and Senior Scientific Investigators met with OPSO program officials and external advisors in Washington, D.C., to present their latest research findings and discuss areas of potential future study.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990280,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCI OPSO Think Tank \"Integrating the Physical Sciences Perspective to Open a New Frontier in Oncology",
+		"startDate":"2012-02-08 17:51:11",
+		"endDate":"2012-02-08 17:51:11",
+		"text":"",
+		"fullText": "Cancer biologists, clinicians, and physical scientists from within and outside the PS-­OC Network came together for this Think Tank and highlighted key areas of progress by the Network, including the application of computational physics to temporal and spatial dynamics in cancer biology, the evolutionary dynamics of cancer, and the role of mechanical forces in tumor development and progression. Participants also identified directions for future research at the intersection of physical sciences and cancer research, including application of theory to experimentation, defining the state space of cancer, and developing ways to control the physical parameters of tumors.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://opso.cancer.gov/report/ThinkTank.aspx",
+		"media":[{
+			"id":2140310,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/NCI_OPSO_Think_Tank.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3990372,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"PS-OC Network Young Investigator's Meeting",
+		"startDate":"2012-04-06 11:55:29",
+		"endDate":"2012-04-06 11:55:29",
+		"text":"",
+		"fullText": "This 1.5-­day meeting brought together post doctoral and graduate students from across the PS-­OC Network to participate in career development sessions by senior investigators from industry, government, and academia. A juried oral presentation competition followed by poster presentations afforded young investigators the opportunity to showcase their research, exchange ideas, and network.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990405,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCI OPSO Strategic Workshop \"Applying Physical Sciences Perspectives from Developmental Biology and Tissue Engineering to Cancer Research",
+		"startDate":"2012-04-06 11:55:29",
+		"endDate":"2012-04-06 11:55:29",
+		"text":"",
+		"fullText": "At this Strategic Workshop, participants explored links between cancer and development or tissue regeneration using a physical sciences perspective to potentially provide additional insight into our understanding of cancer. Researchers from the fields of developmental biology, tissue engineering and regenerative medicine, bioengineering, chemical engineering, chemistry, computational physics, and cancer research convened to discuss whether the state-­of-­the-­art physical sciences perspectives being brought to bear in developmental biology and tissue engineering could be used to address critical questions concerning cancer initiation, progression, and metastasis across length and time scales.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990448,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Launch of the Development of the PS-OC Data Coordinating Center",
+		"startDate":"2012-04-17 03:19:36",
+		"endDate":"2012-04-17 03:19:36",
+		"text":"",
+		"fullText": "The <a href=\"http://opso.cancer.gov/data/\">PS-­OC DCC</a>  serves as a tool for fulfilling the Network’s Data Sharing Policy of disseminating PS‐OC results to the Network and broader scientific community to facilitate collaborations within and outside the Network.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990458,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Third Annual PS-OC Network Investigators' Meeting",
+		"startDate":"2012-04-20 03:19:36",
+		"endDate":"2012-04-20 03:19:36",
+		"text":"",
+		"fullText": "The Third Annual PS-­OC Network Investigators’ Meeting was hosted by the H. Lee Moffitt PS-­OC and held in Tampa, Florida. The meeting offered the opportunity to share recent findings and insights, develop the next round of PS-­OC Trans-Network pilot projects,and build future collaborations across the PS-OC Network.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://capconcorp.com/meeting/2012/psoc/",
+		"media":[]				
+	},{
+		"id":3990595,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCI OPSO Strategic Workshop \"Applying Evolutionary Biology Strategies to Cancer Research\"",
+		"startDate":"2012-05-26 06:08:48",
+		"endDate":"2012-05-26 06:08:48",
+		"text":"",
+		"fullText": "This Strategic Workshop explored research opportunities at the intersection of the physical sciences and cancer biology by bringing physical sciences perspectives from evolution and evolutionary theory to enable a deeper understanding of cancer and inform the development of better approaches to detect, treat, and prevent this complex disease.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990607,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCI OPSO Strategic Workshop \"Evolutionary Dynamics in Cancer Therapy\"",
+		"startDate":"2012-05-09 06:08:48",
+		"endDate":"2012-05-09 06:08:48",
+		"text":"",
+		"fullText": "This Strategic Workshop combined physical sciences perspectives from evolutionary biology, computational biology, and control engineering to identify new tools and therapeutic approaches informed by evolutionary dynamics to advance the treatment and control of cancer. The workshop highlighted a series of new results and convened roundtable discussions between experts to discuss outstanding questions.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990617,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Report Released on Assessment of Physical Sciences and Engineering Advances in Life Sciences and Oncology (APHELION) in Europe",
+		"startDate":"2012-08-30 00:44:16",
+		"endDate":"2012-08-30 00:44:16",
+		"text":"",
+		"fullText": "The NCI, NSF, and NIBIB commissioned the international APHELION study in order to determine the status and trends of applying physical sciences and engineering principles to oncology research and development in leading laboratories and organizations in Europe via an onsite peer review process. The panel members made visits to laboratories in France, Italy, Israel, Germany, Netherlands, Spain, Sweden,and Switzerland.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://opso.cancer.gov/report/Aphelion.aspx",
+		"media":[]				
+	},{
+		"id":3990630,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Integrative Cancer Biology Program Center for Cancer Systems Biology and the Physical Sciences-Oncology Centers Program Joint Meeting of the Junior Investigators",
+		"startDate":"2012-09-07 09:46:25",
+		"endDate":"2012-09-07 09:46:25",
+		"text":"",
+		"fullText": "This meeting brought together junior investigators from two NCI programs: the Integrative Cancer Biology Program Centers for Cancer Systems Biology and the Physical Sciences –Oncology Centers Program. The participants discussed their areas of research and formed small mixed teams to generate novel transdisciplinary cancer research proposals.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://icbp.nci.nih.gov/education-and-outreach/jr_investigators/agenda_08_29_12.doc",
+		"media":[]				
+	},{
+		"id":3990641,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Request for Information \"Engineered Tissues for Biospecimen Research\"",
+		"startDate":"2012-09-18 09:46:25",
+		"endDate":"2012-09-18 09:46:25",
+		"text":"",
+		"fullText": "The ability to test the impact of pre-analytical variables in assay systems used for tumor biospecimens is challenging due to the scarcity of the tissue, limited size of tissue samples, and inter and intra-patient biospecimen heterogeneity.The developing field of engineered tissues may provide the opportunity to establish more standardized materials fortesting the effects of pre-­analytical biospecimen variables on downstream analysis. OPSO published a request for information pertaining to this topic to address potential needs, gaps,and opportunities in engineered tissues for culturing tumor biospecimens.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990668,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCI OPSO Symposium: \"New Frontiers in Physical Sciences and Oncology\"",
+		"startDate":"2012-12-06 09:46:25",
+		"endDate":"2012-12-06 09:46:25",
+		"text":"",
+		"fullText": "At the NIH campus in Bethesda, investigators from the intramural research program, the PS-­OC program, and the broader scientific community convened to present advances in imaging, mechanosensing, transcriptional control, and drug resistance in cancer. The Symposium featured results from novel biophysical systems to study these phenomena in single cells.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://www.capconcorp.com/meeting/2012/NewFrontiers/",
+		"media":[]				
+	},{
+		"id":3990659,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Publication of Nature Outlook \"Physical Scientists Take on Cancer\"",
+		"startDate":"2012-11-02 09:46:25",
+		"endDate":"2012-11-02 09:46:25",
+		"text":"",
+		"fullText": "This issue of Nature Outlook featured articles that cover a variety of topics in cancer research ranging from cell mechanics, evolution, and big data to nanotechnology and computer modeling.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://www.nature.com/nature/outlook/physical_scientists_cancer/index.html",
+		"media":[{
+			"id":2140337,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Publication_of_Nature_Outlook.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":3990685,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Launch of joint contract with OPSO/CSSI-OD/BBRB investigating the effect of pre-analytical variables of CTC enumeration and quality using high-content analysis tools",
+		"startDate":"2013-03-01 09:46:25",
+		"endDate":"2013-03-01 09:46:25",
+		"text":"",
+		"fullText": "This contract serves as pilot for exploring how pre-­analytic variables and sample handling affect the results and findings of high-­content screening of clinical samples.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990696,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"PS-OC Network Publication in Scientific Reports \"A Physical Sciences Network Characterization of Non-Tumorigenic and Metastatic Cells",
+		"startDate":"2013-04-02 09:46:25",
+		"endDate":"2013-04-02 09:46:25",
+		"text":"",
+		"fullText": "In order to learn more about biophysical changes associated with malignant tumor cells, the PS-­OC Network launched a comprehensive, interdisciplinary <a href=\"http://www.nature.com/srep/2013/130422/srep01449/full/srep01449.html\">study</a> that aimed to characterize differences in non-metastatic vs. metastatic breast epithelial cells. Experiments were coordinated between 20 laboratories across the network using standardized reagents and techniques. Together, these laboratories were able to decipher marked differences in mechanics, migration, adhesion, oxygen response, and proteomic profiles between the two cell lines. The depth and breadth of the findings from this study are a testament to the value of integrating diverse experimental observations between investigators in order to learn more about the progression of cancer. Focus article about the study was published in <a href=\"http://opso.cancer.gov/data/\">Science Translational Medicine</a> and the White House Office of Science and Technology Policy wrote blog about the study, which can be found <a href=\"http://cssi.cancer.gov/about.asp\">here</a>.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990770,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"PS-OC Network Young Investigators' Meeting",
+		"startDate":"2013-04-25 01:30:05",
+		"endDate":"2013-04-25 01:30:05",
+		"text":"",
+		"fullText": "This meeting brought together graduate students and post doctoral fellows in the PS-­OC Network to share knowledge and experience in addition to providing avenue for training and starting new collaborations.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990777,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCI OPSO Strategic Workshop on \"Redox Context and Cancer Stem Cells\"",
+		"startDate":"2013-06-14 01:30:05",
+		"endDate":"2013-06-14 01:30:05",
+		"text":"",
+		"fullText": "The goal of this workshop was to better define and understand cancer in terms of the physical state and redox effectors. Over 50 experts, including Nobel laureate Dr. James Watson, discussed the convergence of redox biology with cancerstem cell biology, metabolism, the physical microenvironment, tissue engineering, and treatment resistance.",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":3990793,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Launch of Genomic Characterization Contract",
+		"startDate":"2013-06-18 01:30:05",
+		"endDate":"2013-06-18 01:30:05",
+		"text":"",
+		"fullText": "Detailed genomic characterization is being conducted for the panel of cell lines offered by the PS-­OC Network Bioresource Core Facility (PBCF). Genomic characterization of each cell line will include exome sequencing, genotyping, and quantification of mRNA and microRNA expression levels using high-throughput sequencing technology. These genomic datasets will be available at the PS‐OC Data Coordinating Center (PS-­OC DCC).",
+		"category":"248862",
+		"dateFormat":"auto",
+		"externalLink":"http://opso.cancer.gov/data/",
+		"media":[]				
+	},{
+		"id":4603984,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"U.S. Department of State Brazil Innovation Panel",
+		"startDate":"2015-04-02 01:30:05",
+		"endDate":"2014-11-15 01:30:05",
+		"text":"April 2, 2015",
+		"fullText": "The U.S. Department of State hosted a panel discussion on public policies that promote innovation with approximately 11-16 Brazilian parliamentarians who were visiting the United States to learn about best practices. Dr. Jerry Lee served as one of four speakers on an interagency panel focused on how the U.S. Government and its policies incentivize and promote innovation. A U.S. Deputy Assistant Secretary opened the discussion and provided context to the U.S.-Brazil bilateral relationship. Other speakers included Dan Correa, NSC Senior Advisor for Innovation Policy; Scott Nathan, the Department of State's Special Representative for Economic and Commercial; and Thaddeus Burns, a General Electric (GE) expert on intellectual property rights. Dr. Lee shared his experience with CSSI using innovative approaches to support R&D in biomedical research.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4538661,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Nanotechnology Phase I approval by NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2004-07-12 14:41:08",
+		"endDate":"2004-07-12 14:41:08",
+		"text":"Enter story info here",
+		"fullText": "Phase I: Alliance for Nanotechnology in Cancer (ANC) is an integrated initiative to transform clinical oncology and inform basic cancer research through the directed application of nanotechnology. NCI BSA voted to approve the proposal.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0704/12jul04mins.pdf",
+		"media":[]				
+	},{
+		"id":4332576,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"American Association for Cancer Research (AACR)",
+		"startDate":"2013-04-10 00:46:59",
+		"endDate":"2013-04-10 00:46:59",
+		"text":"Dr. Emily Greenspan presents: Introduction to NCI's Center for Strategic Scientific Initiatives and Overview of the Provocative Questions Initiative (AACR NCI-Sponsored Session)",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://cssi.cancer.gov/pdf/CSSI-PQ-AACRApril2013_EG-tagged.pdf",
+		"media":[{
+			"id":2200939,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/AACR_Dr_Emily_Greenspan_Introduction_to_NCIs_CSSIs.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":4494573,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"15th Annual IMAT Meeting",
+		"startDate":"2014-11-12 00:46:59",
+		"endDate":"2014-11-13 00:46:59",
+		"text":"",
+		"fullText": "Welcome to the 15th Annual Principal Investigators’ (PI) Meeting for the NCI Innovative Molecular Analysis Technologies (IMAT) program. As many of you already know, this annual meeting is organized to address two important aims of the IMAT program: (1) to provide NCI program staff a chance to interact directly with PIs and receive an update on progress to date with supported research and (2) to provide an opportunity for interactions and exchange of ideas among meeting participants. The latter aim serves as a critical opportunity to spark new project collaborations for either further improvement of supported technology platforms or to launch the development of entirely new technologies. The interactions are also an important opportunity for receiving critical feedback and guidance from a broad community, as well as for fostering dissemination of the exciting technologies emerging from IMAT-supported researchers.;xNLx;;xNLx;An important issue in general from the perspective of any investor is the need to engage end-users early and often, and so the meeting includes various mechanisms for facilitating that communication. Researchers from NCI’s intramural laboratories of the Center for Cancer Research will be in attendance and likely asking questions throughout the meeting, including the poster sessions. You are very much encouraged to engage them to understand their interests and needs. Also note there are collaborative funding opportunities for projects involving intramural researchers. Many of the IMAT-supported technologies are multidisciplinary endeavors, and as such your fellow supported investigators also represent important end-user perspectives that might be explored. The relatively long breaks between sessions are meant to allow for such interaction and dialog. Finally, discussion groups are being organized to encourage exploration of emerging areas for which new technology development should be focused. Beyond the several topics introduced by NCI program scientists for discussion, participants are very much encouraged to form additional discussion groups and consider inviting other meeting participants to join.;xNLx;;xNLx;There are more exciting active research projects in the IMAT portfolio than we could possibly allow sufficient speaking time for, so we will continue our practice of having short “Poster Highlight” talks for those investigators presenting particularly interesting posters relevant to each session. As these presentations are short, each of you are encouraged to seek additional details from the poster during one of the two poster sessions. In addition to the agenda and presentation abstracts, a list of resources and funding opportunities we thought might be of interest to participants are included toward the back of this program book.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://innovation.cancer.gov/news/15th/IMAT_2014_Program_Book_FINAL_website.pdf",
+		"media":[{
+			"id":2174392,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/15th_Annual_IMAT_Meeting.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":4531560,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Development of Best Practices Document for Peptide Standards",
+		"startDate":"2015-02-09 00:46:59",
+		"endDate":"2015-02-09 00:46:59",
+		"text":"February 9, 2015",
+		"fullText": "The Assay Development Working Group (ADWG) of the CPTAC program is currently drafting a document to propose best practices for generation, quantification, storage, and handling of peptide standards used for mass spectrometry-based assays, as well as interpretation of quantitative proteomic data based on peptide standards.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2015/peptidebestpractices",
+		"media":[]				
+	},{
+		"id":4531601,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomic Tumor Analysis Consortium (CPTAC) Proteomics Data on UCSC Genome Browser",
+		"startDate":"2015-01-07 01:30:05",
+		"endDate":"2015-01-07 01:30:05",
+		"text":"January 7, 2015",
+		"fullText": "The National Cancer Institute's Clinical Proteomic Tumor Analysis Consortium scientists are working together with the University of California, Santa Cruz (UCSC) Genomics Institute to provide public access to cancer proteomics data via the UCSC Genome Browser. This effort extends accessibility of the CPTAC data to more researchers and provides an additional level of analysis to assist the cancer biology community.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2015/ucscproteomics",
+		"media":[]				
+	},{
+		"id":4531608,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Investigating RAS Signaling in Cancer",
+		"startDate":"2014-12-17 09:31:18",
+		"endDate":"2014-12-17 09:31:18",
+		"text":"December 17, 2014",
+		"fullText": "CPTAC expertise has been charged to develop RAS-specific targeted proteomic assays to study the important pathways of human cancer. The oncogene RAS is linked to 30 percent of human cancers, but the search for a targeted therapy for RAS has remained elusive. To advance understanding of this oncogene and to develop improved targeted therapies against RAS pathway, the National Cancer Institute (NCI) has launched a RAS Initiative.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2014/ras",
+		"media":[]				
+	},{
+		"id":4531635,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The Cancer Genome Atlas (TCGA) Colorectal Cancer Proteomics Study",
+		"startDate":"2014-09-15 09:31:18",
+		"endDate":"2014-09-15 09:31:18",
+		"text":"September 2014 ",
+		"fullText": "The Vanderbilt University-led research team of CPTAC investigators describes the first in-depth integrated proteomic and genomic analysis by examining 95 TCGA colon and rectal tumors. <em>Nature</em> publishes a data resource comprising 7,526 proteins and 796 SAAVs publicly released in September 2013 through the CPTAC Data Portal.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"https://cptac-data-portal.georgetown.edu/cptacPublic/",
+		"media":[]				
+	},{
+		"id":4531643,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Vanderbilt University Study Creates New Roadmap for Cellular Activity",
+		"startDate":"2014-09-11 12:49:08",
+		"endDate":"2014-09-11 12:49:08",
+		"text":"September 11, 2014",
+		"fullText": "Scientists studying cellular processes have long sought to measure redox modifications because they provide one of the normal layers of cell control. But redox disruption or oxidative stress at the cellular level can also create a pathway to diseases like cancer, diabetes, or neurodegenerative diseases.  CPTAC investigators Daniel Liebler, Ph.D., Ingram Professor of Cancer Research, and Jing Yang, Ph.D., Research Fellow in biochemistry at Vanderbilt University, teamed with Kate Carroll, Ph.D., and Vinayak Gupta, Ph.D., from Scripps Florida, to identify these oxygen modifications. This new study, which provides a roadmap for other scientists and could be useful for drug development, was published online September 1 in <em>Nature Communications</em>. ",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2014/vuroadmap",
+		"media":[]				
+	},{
+		"id":4531660,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomic Tumor Analysis Consortium (CPTAC) Contributes to Healthdata.gov",
+		"startDate":"2014-09-11 01:30:05",
+		"endDate":"2014-09-11 01:30:05",
+		"text":"September 11, 2014",
+		"fullText": "Recently, proteomic data generated by the CPTAC, funded by the National Cancer Institute, was highlighted to the wider research community at Healthdata.gov. Healthdata.gov aims to make health data more accessible to entrepreneurs, researchers, and policymakers in the hope of improving health outcomes for all. Through the inclusion of the CPTAC datasets on this portal, our goal is to encourage data sharing and enable researchers from all scientific disciplines to analyze, visualize, and evaluate the data.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2014/healthdatagov",
+		"media":[]				
+	},{
+		"id":4531681,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"National Cancer Institute Launches Proteomics Assay Portal",
+		"startDate":"2014-07-28 00:46:59",
+		"endDate":"2014-07-28 00:46:59",
+		"text":"July 28, 2014",
+		"fullText": "In a paper recently published by the journal <em>Nature Methods</em>, investigators from the National Cancer Institute’s Clinical Proteomic Tumor Analysis Consortium (NCI-CPTAC) announced the launch of a proteomics Assay Portal for multiple reaction monitoring-mass spectrometry (MRM-MS) assays. This community Web-based repository for well-characterized quantitative proteomic assays currently consists of 456 unique peptide assays to 282 unique proteins and serves as a public resource of methodologies and data related to cancer-associated targets.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2014/proteomicsassayportal",
+		"media":[]				
+	},{
+		"id":4531685,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomic Tumor Analysis Consortium (CPTAC) Researchers Report First Large-Scale Integrated Proteomic and Genomic Analysis of a Human Cancer",
+		"startDate":"2014-07-20 09:31:18",
+		"endDate":"2014-07-20 09:31:18",
+		"text":"July 20, 2014",
+		"fullText": "Investigators from the CPTAC, who comprehensively analyzed 95 human colorectal tumor samples, have determined how gene alterations identified in previous analyses of the same samples are expressed at the protein level.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2014/crcmolecularfeatures",
+		"media":[]				
+	},{
+		"id":4531707,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Data Release: The Cancer Genome Atlas (TCGA) Ovarian Cancer Proteomics Study",
+		"startDate":"2014-06-04 09:31:18",
+		"endDate":"2014-06-04 09:31:18",
+		"text":"June 4, 2014",
+		"fullText": "Proteomic Tumor Analysis Consortium (CPTAC) scientists have released a comprehensive dataset of the proteomic analysis of high-grade serous ovarian tumor samples, previously genomically analyzed by TCGA. This is one of the largest public datasets covering the proteome, phosphoproteome, and glycoproteome with complementary deep genomic sequencing data on the same tumor.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2014/ovariandatarelease",
+		"media":[]				
+	},{
+		"id":4531760,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Tumor Cold Ischemia",
+		"startDate":"2014-04-18 09:31:18",
+		"endDate":"2014-04-18 09:31:18",
+		"text":"April 18, 2014",
+		"fullText": "In the journal of <em>Molecular and Cellular Proteomics</em>, researchers from the National Cancer Institutes (NCI) Clinical Proteomic Tumor Analysis Consortium (CPTAC) investigated the effect of cold ischemia on the proteome of fresh frozen tumors.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2014/tumorcoldischemia",
+		"media":[]				
+	},{
+		"id":4531752,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Draft Map of Human Proteome Published",
+		"startDate":"2014-05-28 09:31:18",
+		"endDate":"2014-05-28 09:31:18",
+		"text":"May 28, 2014",
+		"fullText": "In the journal <em>Nature</em>, researchers have presented a draft map they developed of the human proteome. Striving for the protein equivalent of the Human Genome Project, an international team of researchers has created an initial catalog of the human proteome. In total, using 30 different human tissues, the researchers identified proteins encoded by 17,294 genes, which is approximately 84 percent of all the genes in the human genome predicted to encode proteins.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2014/humanproteomemap",
+		"media":[]				
+	},{
+		"id":4531765,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Setting the Standard in Proteomics",
+		"startDate":"2014-03-25 09:31:18",
+		"endDate":"2014-03-25 09:31:18",
+		"text":"March 25, 2014",
+		"fullText": "In the journal <em>Molecular and Cellular Proteomics</em>, researchers outlined “best practices” for developing and publishing proteomic studies involving one of the field's signature state-of-the-art tools: targeted mass spectrometry (MS). ",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2013/standardstargeted",
+		"media":[]				
+	},{
+		"id":4532025,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Data Release: The Cancer Genome Atlas (TCGA) Colorectal Cancer Proteomics Study",
+		"startDate":"2013-09-09 09:31:18",
+		"endDate":"2013-09-09 09:31:18",
+		"text":"September 9, 2013",
+		"fullText": "The National Cancer Institute’s Clinical Proteomics Tumor Analysis Consortium (CPTAC) publicly released proteomic data produced from colorectal tumor samples previously analyzed by TCGA. This is the initial release of proteomic tumor data designed to complement genomic data on the same tumors. The data are publicly available at the CPTAC data portal. ",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2013/colorectalcancer",
+		"media":[]				
+	},{
+		"id":4531990,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Data Release: The Cancer Genome Atlas (TCGA) Breast Cancer Proteomics Study",
+		"startDate":"2014-03-04 09:31:18",
+		"endDate":"2014-03-04 09:31:18",
+		"text":"March 4, 2014",
+		"fullText": "The National Cancer Institute Clinical Proteomic Tumor Analysis Consortium (CPTAC) scientists have released a dataset of proteins and phosphorylated phosphopeptides identified through deep proteomic and phosphoproteomic analysis of breast tumor samples, previously genomically analyzed by TCGA.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2013/tcgabreast",
+		"media":[]				
+	},{
+		"id":4532005,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Assays Without Borders",
+		"startDate":"2013-12-11 00:46:59",
+		"endDate":"2013-12-11 00:46:59",
+		"text":"December 11, 2013",
+		"fullText": "CPTAC researchers partner with international laboratories to demonstrate the ability of targeted mass spectrometry–based assays to reproducibly quantify human proteins across laboratories, countries, and continents in a recently published <em>Nature Methods</em> article.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2013/assaynoborders",
+		"media":[]				
+	},{
+		"id":4532017,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Highlights From Clinical Proteomic Tumor Analysis Consortium (CPTAC) Scientific Symposium",
+		"startDate":"2013-11-20 12:49:08",
+		"endDate":"2013-11-20 12:49:08",
+		"text":"November 20, 2013",
+		"fullText": "The first CPTAC Public Scientific Symposium brought together a record number of registrants, 450 scientists, who shared and discussed novel biological discoveries, analytical methods, and translational approaches using CPTAC data.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/newsannouncements/archive/2013/scientificsymposiumrecap",
+		"media":[]				
+	},{
+		"id":4532045,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCI’s Antibody Characterization Program (ACP) Provides Needed Resources to the Research Community",
+		"startDate":"2013-06-15 09:31:18",
+		"endDate":"2013-06-15 09:31:18",
+		"text":"June 2013",
+		"fullText": "Published in <em>eProtein</em>, NCI’s ACP Provides Needed Resources to the Research Community, is an interview with Dr. Gordon Whiteley and Dr. Tara Hiltke.",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"http://proteomics.cancer.gov/newsevents/eprotein/june2013/researcher-opportunities/acptargetrequest",
+		"media":[]				
+	},{
+		"id":4540885,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"AACR 2014",
+		"startDate":"2014-04-18 09:31:18",
+		"endDate":"2014-04-18 09:31:18",
+		"text":"Cancer today",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://www.cancertodaymag.org/EventCoverage/Pages/AACR-Annual-Meeting-2014-Cell-Mechanics-Offers-a-New-Way-to-Understand-Cancer.aspx",
+		"media":[]				
+	},{
+		"id":4540857,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Georgia Parker H. Petit Institute for Tec Bioengineering and Bioscience",
+		"startDate":"2014-03-04 00:46:59",
+		"endDate":"2014-03-04 00:46:59",
+		"text":"Dr. Jerry S.H. Lee, (CSSI OD) presents \"Advancing Innovation and Convergence In Cancer Research\"",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://cssi.cancer.gov/pdf/1-GTSeminar-Jerry-Final-Reduced508-032014.pdf",
+		"media":[{
+			"id":2201216,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Georgia_Parker_H_Petit_Institute_for_Tec_Bioengineering_and_Bioscience.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":4538489,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Innovative Molecular Analysis Technologies (IMAT) Launch",
+		"startDate":"1998-12-01 09:31:18",
+		"endDate":"1998-12-01 09:31:18",
+		"text":"Enter story info here",
+		"fullText": "NCI established the IMAT program to support the development of next-generation analytical methodologies and tools that have the potential to revolutionize the way that research can be pursued. ",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://innovation.cancer.gov/",
+		"media":[{
+			"id":2200304,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Innovative_Molecular_Analysis_Technologies_IMAT_Launch.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":4538713,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Proteomic Technologies Informatics Workshop",
+		"startDate":"2005-02-01 01:53:14",
+		"endDate":"2005-02-01 01:53:14",
+		"text":"Enter story info here",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4538736,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Genetic Markers of Susceptibility (CGEMS) Launch",
+		"startDate":"2005-02-02 19:40:51",
+		"endDate":"2005-02-02 19:40:51",
+		"text":"Enter story info here",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://dceg.cancer.gov/research/how-we-study/genomic-studies/cgems-summary",
+		"media":[]				
+	},{
+		"id":4538903,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Clinical Proteomic Technologies for Cancer (CPTC) Phase I Launch",
+		"startDate":"2006-10-02 10:21:27",
+		"endDate":"2006-10-02 10:21:27",
+		"text":"Enter story info here",
+		"fullText": "CPTC was launched to foster the building of an integrated foundation of proteomic technologies, data, reagents and reference materials, and analysis systems to systematically advance the application of protein science to accelerate discovery and clinical research in cancer.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4538947,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Biospecimen Research Network (BRN) Launch",
+		"startDate":"2006-11-01 21:00:22",
+		"endDate":"2006-11-01 21:00:22",
+		"text":"Enter story info here",
+		"fullText": "\"Integrating and Leveraging the Physical Sciences to Open a New Frontier in Oncology\" think tank convened in Washington, DC.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://biospecimens.cancer.gov/researchnetwork/default.asp",
+		"media":[{
+			"id":2205030,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Biospeciment_Research_Network_Launch.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":4539662,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Nanotechnology: In vitro Diagnostic and Prevention Therapy and Post-Treatment In vivo Diagnostic and Imaging",
+		"startDate":"2008-03-04 21:00:22",
+		"endDate":"2008-03-04 21:00:22",
+		"text":"",
+		"fullText": "Strategic Workshops on Cancer Nanotechnology were held: In vitro Diagnostic and Prevention Therapy and Post-Treatment In vivo Diagnostic and Imaging workshops. ",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://nano.cancer.gov/objects/pdfs/Strategic_Workshops_on_Cancer_Nanotechnology_-_CancerRes_final_508.pdf",
+		"media":[]				
+	},{
+		"id":4539733,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Physical Sciences-Based Frontiers in Oncology: The Coding, Decoding, Transfer, and Translation of Information in Cancer",
+		"startDate":"2008-10-29 00:12:29",
+		"endDate":"2008-10-31 00:12:29",
+		"text":"",
+		"fullText": "\"Physical Sciences-Based Frontiers in Oncology: The Coding, Decoding, Transfer, and Translation of Information in Cancer\" think tank convened in Washington, DC.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://opso.cancer.gov/report/ps3.aspx",
+		"media":[{
+			"id":2200718,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Physical_Sciences-Based_Frontiers_in_Oncology_Oct2008.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":4539862,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"I-SPY 2 Trial",
+		"startDate":"2010-03-17 09:28:44",
+		"endDate":"2010-03-17 09:28:44",
+		"text":"",
+		"fullText": "The Biomarkers Consortium, a unique public-private partnership led by the U.S. Food and Drug Administration, National Institutes of Health, and Foundation for the National Institutes of Health announced I-SPY 2 Trial, a clinical trial to help screen promising new drugs being developed for women with high-risk, fast-growing breast cancer. ",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://www.fnih.org/work/key-initiatives/biomarkers-consortium/ispy2",
+		"media":[]				
+	},{
+		"id":4540083,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Common Fund Genotype-Tissue Expression (GTEx) Launch",
+		"startDate":"2010-10-05 09:46:25",
+		"endDate":"2010-10-05 09:46:25",
+		"text":"",
+		"fullText": "OBBR's caHUB begins the first collection of biospecimens for the NIH Common Fund's GTEx program which aims to study human gene expression and regulation in multiple tissues, providing valuable insights into the mechanisms of gene regulation and, in the future, its disease-related perturbations.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"https://commonfund.nih.gov/GTEx/index",
+		"media":[{
+			"id":2200776,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/Common_Fund_Genotype-Tissue_Expression.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":4540300,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"TCGA Holds First Annual Scientific Symposium – Enabling Cancer Research Through TCGA",
+		"startDate":"2011-11-17 01:12:25",
+		"endDate":"2011-11-18 01:12:25",
+		"text":"",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://www.capconcorp.com/meeting/2011/TCGA/default.asp)",
+		"media":[]				
+	},{
+		"id":4540398,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"American Association for Cancer Research (AACR)",
+		"startDate":"2013-04-17 23:32:39",
+		"endDate":"2013-04-17 23:32:39",
+		"text":"Dr. Dorothy Farrell presents: The Office for Cancer Nanotechnology Research: Support and Resources for Cancer Nanotechnology Research",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://cssi.cancer.gov/pdf/AACR-CSSIsession-April2013-04-02-2013-508.pdf",
+		"media":[{
+			"id":2200962,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/AACR_Dr_Dorothy_Farrell_presents_The_Office_for_Nanotechnology_Research.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":4540455,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"14th Annual Innovative Molecular Analysis Technologies Principal Investigators Meeting",
+		"startDate":"2013-11-21 12:49:08",
+		"endDate":"2013-11-22 12:49:08",
+		"text":"",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://innovation.cancer.gov/news/14th/IMAT_2013_Program_Book-508.pdf",
+		"media":[{
+			"id":2201000,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/14th_Annual_IMAT_Nov2013.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":4540521,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Phase III of the Alliance for Nanotechnology in Cancer approved by NCI Board of Scientific Advisors (BSA)",
+		"startDate":"2014-01-01 00:46:59",
+		"endDate":"2014-01-01 00:46:59",
+		"text":"",
+		"fullText": "The third phase of Alliance awards will include Centers for Cancer Nanotechnology Excellence focused on developing and clinically translating nanotechnology applications for cancer diagnosis and treatment, innovative U01 projects devoted to discovery research in cancer nanotechnology, and dedicated funds for T32 training awards in cancer nanotechnology.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa0314/agenda.pdf",
+		"media":[]				
+	},{
+		"id":4540838,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"American Society of Engineering Education (ASEE)",
+		"startDate":"2014-03-12 12:49:08",
+		"endDate":"2014-03-12 12:49:08",
+		"text":"",
+		"fullText": "<a href=\"http://www.asee.org/conferences-and-events/conferences/erc/2014/Jerry_Lee_Powerpoint.pdf\">View Presentation</a>",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://www.asee.org/conferences-and-events/conferences/erc/2014/program-schedule",
+		"media":[{
+			"id":2201206,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/American_Society_of_Engineering_Educations_ASEE.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":4540893,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"2nd Annual CSSI Science Day",
+		"startDate":"2014-06-03 09:31:18",
+		"endDate":"2014-06-03 09:31:18",
+		"text":"",
+		"fullText": "Advances in research endeavors supported by CSSI Programs and Offices were shared in a staff scientific workshop, including presentations of unpublished work by CSSI-supported investigators.  Collaborative opportunities that complement existing and new aspects of CSSI’s programs were discussed culminating on ideas for long term growth and new scientific endeavors that support CSSI’s mission.;xNLx;;xNLx;<a href=\"http://cssi.cancer.gov/Video_Lowy2.asp\">VIDEO: Douglas Lowy, Acting Director, CSSI</a> ;xNLx;<a href=\"http://cssi.cancer.gov/Video_Grodzinski2.asp\">VIDEO: Piotr Grodzinski, Director, OCNR</a>;xNLx;<a href=\"http://cssi.cancer.gov/Video_Rodriguez2.asp\">VIDEO: Henry Rodriguez, Director, OCCPR </a>;xNLx;",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://cssi.cancer.gov/pdf/2014-CSSI-Science-Day_Agenda508.pdf",
+		"media":[]				
+	},{
+		"id":4540929,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The ILSI Health and Environmental Sciences Institute (HESI)",
+		"startDate":"2014-06-17 00:46:59",
+		"endDate":"2014-06-17 00:46:59",
+		"text":"",
+		"fullText": "<a href=\"http://cssi.cancer.gov/pdf/1-HESI-Final-061014-Reduced508.pdf\">Slides</a>",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://www.hesiglobal.org/i4a/pages/index.cfm?pageid=3646",
+		"media":[{
+			"id":2201269,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/The_ILS_Health_and_Environmental_Sciences_Institute.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":4544679,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"American Association for Cancer Research (AACR)",
+		"startDate":"2013-04-08 12:49:08",
+		"endDate":"2013-04-08 12:49:08",
+		"text":"Dr. Emily Boja presents: Building a Comprehensive Cancer Atlas",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://cssi.cancer.gov/pdf/Boja-AACR-CSSI-03-28-13-tagged.pdf",
+		"media":[{
+			"id":2203649,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/AACR_Dr_Emily_Boja_presents_Building_a_Comprehensive_Cancer_Atlas.png",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":4546137,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Proteomics for Early Cancer Detection Workshop",
+		"startDate":"2003-04-01 09:31:18",
+		"endDate":"2003-04-01 09:31:18",
+		"text":"",
+		"fullText": "",
+		"category":"248858",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4547036,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"CBS News highlights Alliance investigator Mark Davis as nanotechnology treatments for cancer advance through clinical trials",
+		"startDate":"2013-08-05 12:49:08",
+		"endDate":"2013-08-05 12:49:08",
+		"text":"",
+		"fullText": "",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://www.cbsnews.com/news/engineer-develops-new-way-to-fight-wifes-cancer/",
+		"media":[{
+			"id":2204642,
+			"src":"http://cssi.cabezon.com/timeline-assets/assets/img/CBS_News_highlights_Alliance_investigator_Mark_Davis.jpg",
+			"caption":"",
+			"type":"Image",
+			"thumbPosition":"-1,-1",
+			"externalMediaThumb":"",
+			"externalMediaType":"",
+			"externalMediaId":"",
+			"orderIndex": 10			
+		}]				
+	},{
+		"id":4603433,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Gordon Research Conference on RNA Nanotechnology",
+		"startDate":"2015-02-01 00:46:59",
+		"endDate":"2015-02-06 00:46:59",
+		"text":"February 1-6, 2015",
+		"fullText": "Four Points Sheraton/Holiday Inn Express;xNLx;Ventura, California;xNLx;<a href=\"http://www.grc.org/programs.aspx?id=16896\">View event details</a>;xNLx;",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603444,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Nanomedicines: Closing the Translational Gap",
+		"startDate":"2014-12-15 01:30:05",
+		"endDate":"2014-12-15 01:30:05",
+		"text":"December 2014",
+		"fullText": "A paper was published in <em>The Lancet</em> that provides a collective view of the translational state of nanomedicines for cancer.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://www.ncbi.nlm.nih.gov/pubmed/25625382",
+		"media":[]				
+	},{
+		"id":4603454,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCI Investment in Nanotechnology: Achievements and Challenges for the Future",
+		"startDate":"2014-11-15 01:30:05",
+		"endDate":"2014-11-15 01:30:05",
+		"text":"November 2014",
+		"fullText": "A paper was published in WIRE's <em>Nanomedicine and Nanobiotechnology</em> that provides an overview of NCI’s investment in nanotechnology training and research, including a review of various nanotechnology programs supported by the NIH and NCI. This paper also discusses plans for future work with the nanotechnology community in the pursuit of innovative nanotechnology-based solutions to cancer.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://www.ncbi.nlm.nih.gov/pubmed/25429991",
+		"media":[]				
+	},{
+		"id":4603457,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"2014 NCI SBIR Investor Forum",
+		"startDate":"2014-11-13 01:30:05",
+		"endDate":"2014-11-13 01:30:05",
+		"text":"November 13, 2014",
+		"fullText": "Agilent Technologies;xNLx;Santa Clara, California",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603459,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"2014 BioNanotechnology Summer Institute",
+		"startDate":"2014-07-27 12:49:08",
+		"endDate":"2014-08-08 12:49:08",
+		"text":"July 27-August 8, 2014",
+		"fullText": "University of Illinois at Urbana-Champaign;xNLx;Urbana, Illinois",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603463,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Nanotech 2014",
+		"startDate":"2014-06-15 12:49:08",
+		"endDate":"2014-06-19 12:49:08",
+		"text":"June 15-19, 2014",
+		"fullText": "Washington, D.C.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603468,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"ASCO 50th Annual Meeting",
+		"startDate":"2014-05-30 09:31:18",
+		"endDate":"2014-06-03 09:31:18",
+		"text":"May 30-June 3, 2014",
+		"fullText": "McCormick Place;xNLx;Chicago, Illinois;xNLx;<a href=\"http://www.cancer.gov/researchandfunding/meetings/2014asco?cid=EBasco_ocnr\">NCI-Sponsored Sessions</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603513,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Future Opportunities in Cancer Nanotechnology—NCI Strategic Workshop Report",
+		"startDate":"2014-03-01 00:46:59",
+		"endDate":"2014-03-01 00:46:59",
+		"text":"March 1, 2014",
+		"fullText": "The NCI, which currently supports an array of research activities in cancer nanotechnology, convened a strategic workshop to explore the most promising directions and areas for future resource investment. The major discussion points, as well as the opportunities identified, were published in the journal <em>Cancer Research</em>.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://cancerres.aacrjournals.org/content/74/5/1307.abstract",
+		"media":[]				
+	},{
+		"id":4603515,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Summary of Responses to the Request for Information",
+		"startDate":"2014-03-01 09:31:18",
+		"endDate":"2014-03-01 09:31:18",
+		"text":"March 2014",
+		"fullText": "The NCI Office of Cancer Nanotechnology Research (OCNR) published a summary of the responses to a request for information (RFI) on the Directions and Needs for Cancer Nanotechnology Research and Development. The RFI sought to gain feedback, comments, and ideas on the status and future of the field and the role NCI funding has played and should continue to play in the future.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://nano.cancer.gov/objects/pdfs/Summary of Responses to the Request for Information-508.pdf",
+		"media":[]				
+	},{
+		"id":4603519,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Nanomedicines: Addressing the Scientific and Regulatory Gap",
+		"startDate":"2013-11-21 09:31:18",
+		"endDate":"2013-11-21 09:31:18",
+		"text":"November 21, 2013",
+		"fullText": "The New York Academy of Sciences;xNLx;New York, New York;xNLx;<a href=\"http://www.nyas.org/Events/Detail.aspx?cid=21bd8d58-3e14-4748-8ef9-5d7626031635\">View event details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603523,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCI’s Clinical Proteomic Tumor Analysis Consortium Scientific Symposium",
+		"startDate":"2013-11-13 12:49:08",
+		"endDate":"2013-11-13 12:49:08",
+		"text":"November 13, 2013",
+		"fullText": "Bethesda, Maryland;xNLx;<a href=\"http://proteomics.cancer.gov/\">View event details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603532,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCL Lessons Learned Workshop",
+		"startDate":"2013-09-20 09:31:18",
+		"endDate":"2013-09-20 09:31:18",
+		"text":"September 20, 2013",
+		"fullText": "NIH Fishers Lane Conference Center;xNLx;Rockville, Maryland",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603543,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Annual NCI Alliance for Nanotechnology in Cancer Principal Investigators Meeting",
+		"startDate":"2013-09-17 09:31:18",
+		"endDate":"2013-09-19 09:31:18",
+		"text":"September 17-19, 2013",
+		"fullText": "Bethesda, Maryland",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603592,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Gordon Research Conference on Cancer Nanotechnology",
+		"startDate":"2013-07-14 09:31:18",
+		"endDate":"2013-07-19 09:31:18",
+		"text":"July 14–19, 2013",
+		"fullText": "Mount Snow Resort;xNLx;West Dover, Vermont;xNLx;<a href=\"http://www.grc.org/programs.aspx?year=2013&program=cancnano\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603602,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Frontiers in Biomagnetic Particles",
+		"startDate":"2013-06-02 00:46:59",
+		"endDate":"2013-06-05 00:46:59",
+		"text":"June 2-5, 2013",
+		"fullText": "New Sheridan Hotel;xNLx;Telluride, Colorado;xNLx;<a href=\"http://www.clemson.edu/magmeet/index.html\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603611,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"2013 AAPS National Biotechnology Conference",
+		"startDate":"2013-05-20 09:31:18",
+		"endDate":"2013-05-23 09:31:18",
+		"text":"May 20–23, 2013",
+		"fullText": "Sheraton San Diego Hotel & Marina;xNLx;San Diego, California;xNLx;<a href=\"https://www.aaps.org/nationalbiotec/\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603619,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Care for Engineers and Scientists 2013",
+		"startDate":"2013-05-13 00:46:59",
+		"endDate":"2013-05-13 00:46:59",
+		"text":"May 13, 2013",
+		"fullText": "Boston University;xNLx;Boston, Massachusetts;xNLx;<a href=\"http://nano-cancer.bu.edu/events/show/1012\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603627,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Nanotech 2013",
+		"startDate":"2013-05-12 00:46:59",
+		"endDate":"2013-05-16 00:46:59",
+		"text":"May 12-16, 2013",
+		"fullText": "Gaylord National Resort & Convention Center;xNLx;National Harbor, Maryland;xNLx;<a href=\"http://www.techconnectworld.com/Nanotech2013/about/\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603673,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"2013 International Conference of RNA Nanotechnology and Therapeutics",
+		"startDate":"2013-04-03 00:46:59",
+		"endDate":"2013-04-05 00:46:59",
+		"text":"April 3-5, 2013",
+		"fullText": "Crowne Plaza Hotel Lexington;xNLx;Lexington, Kentucky;xNLx;<a href=\"http://nanobio.uky.edu/RNA2013/\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603682,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"2nd Nanomedicine for Imaging and Treatment Conference",
+		"startDate":"2013-03-15 00:46:59",
+		"endDate":"2013-03-16 00:46:59",
+		"text":"March 15-16, 2013",
+		"fullText": "Cedars-Sinai Medical Center;xNLx;Los Angeles, California",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603686,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"ASME 2013 2nd Global Congress on NanoEngineering for Medicine & Biology (NEMB2013)",
+		"startDate":"2013-02-04 00:46:59",
+		"endDate":"2013-02-06 00:46:59",
+		"text":"February 4-6, 2013",
+		"fullText": "The Renaissance Boston Waterfront Hotel;xNLx;Boston, Massachusetts;xNLx;<a href=\"http://www.asmeconferences.org/NEMB2013/index.cfm\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603694,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Biotargeted Nanomedicines for Cancer: Six Tenets Before You Begin, Published in Nanomedicine",
+		"startDate":"2013-01-15 09:31:18",
+		"endDate":"2013-01-15 09:31:18",
+		"text":"January 2013",
+		"fullText": "A paper published in the journal <em>Nanomedicine</em> provides a brief summary of the most important nano-based tumor targeting systems and strategies, and discusses recent advances and future directions in the development of tumour-targeted nanomedicines.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://www.ncbi.nlm.nih.gov/pubmed/?term=Biotargeted+Nanomedicines+for+Cancer%3A+Six+Tenets+Before+You+Begin+Published+in+Nanomedicine/",
+		"media":[]				
+	},{
+		"id":4603699,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"IEEE-EMBS Micro and Nanotechnology in Medicine Conference",
+		"startDate":"2012-12-03 12:49:08",
+		"endDate":"2012-12-07 12:49:08",
+		"text":"December 3-7, 2012",
+		"fullText": "Westin Maui Resort and Spa;xNLx;Ka'anapali, Hawaii;xNLx;<a href=\"http://mnm.embs.org/2012\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603706,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Cancer Nanotechnology Conference \"Mechanisms in Nanoparticle Hyperthermia\"",
+		"startDate":"2012-12-01 09:31:18",
+		"endDate":"2012-12-01 09:31:18",
+		"text":"December 1, 2012",
+		"fullText": "Thayer School of Engineering at Dartmouth;xNLx;Hanover, New Hampshire;xNLx;<a href=\"http://engineering.dartmouth.edu/nanoconf/\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603712,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"IEEE-NANOMED 2012",
+		"startDate":"2012-11-04 12:49:08",
+		"endDate":"2012-11-07 12:49:08",
+		"text":"November 4–7, 2012",
+		"fullText": "Imperial Queen's Park Hotel;xNLx;Bangkok, Thailand;xNLx;<a href=\"http://www.ieee-nanomed.org/2012/\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603717,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Imaging in 2012: Imaging in Complex Biology",
+		"startDate":"2012-09-30 12:49:08",
+		"endDate":"2012-10-04 12:49:08",
+		"text":"September 30-October 4, 2012",
+		"fullText": "Jackson Lake Lodge;xNLx;Moran, Wyoming;xNLx;<a href=\"http://www.imagingin2020.com/\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603722,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Nanotechnology Characterization Laboratory (NCL) – Intensive One-Day Workshop",
+		"startDate":"2012-09-28 09:31:18",
+		"endDate":"2012-09-28 09:31:18",
+		"text":"September 28, 2012",
+		"fullText": "Northeastern University;xNLx;Boston, Massachusetts;xNLx;<a href=\"http://www.northeastern.edu/ccne/ncl-one-day-version-of-lessons-learn-workshop/\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603730,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"BioSensing BioActuation BioNanotechnology Summer Institute 2012",
+		"startDate":"2012-07-30 09:31:18",
+		"endDate":"2012-08-10 09:31:18",
+		"text":"July 30-August 10, 2012",
+		"fullText": "University of Illinois at Urbana-Champaign;xNLx;<a href=\"https://bsbasi-2012.mechse.illinois.edu\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603739,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Best Practices in Cancer Nanotechnology: Perspective From NCI Nanotechnology Alliance, Published in Clinical Cancer Research",
+		"startDate":"2012-06-01 09:31:18",
+		"endDate":"2012-06-01 09:31:18",
+		"text":"June 2012",
+		"fullText": "The NCI Office of Cancer Nanotechnology Research published a paper in <em>Clinical Cancer Research</em> that discusses the future prospects of using nanotechnology in cancer applications and practices and methodologies used in the development and translation of nanotechnology-based therapeutics.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://www.ncbi.nlm.nih.gov/pubmed/22669131",
+		"media":[]				
+	},{
+		"id":4603741,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"2012 American Urological Association Foundation Basic Science Symposium, \"Nanomedicine: Applications in Urology Today\"",
+		"startDate":"2012-05-18 09:31:18",
+		"endDate":"2012-05-18 09:31:18",
+		"text":"May 18, 2012",
+		"fullText": "Georgia World Congress Center;xNLx;Atlanta, Georgia;xNLx;<a href=\"http://www.urologyhealth.org/research/BasicScienceSymposium.cfm\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603742,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"European Summit for Clinical Nanomedicine (CLINAM 5/2012)",
+		"startDate":"2012-05-07 16:27:55",
+		"endDate":"2012-05-09 16:27:55",
+		"text":"May 7-9, 2012",
+		"fullText": "Basel, Switzerland;xNLx;<a href=\"http://www.clinam.org/\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603743,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"10th Annual CNST Nanotechnology Workshop 2012",
+		"startDate":"2012-05-02 12:49:08",
+		"endDate":"2012-05-03 12:49:08",
+		"text":"May 2-3, 2012",
+		"fullText": "University of Illinois at Urbana-Champaign;xNLx;Urbana, Illinois;xNLx;<a href=\"http://illinois.edu/calendar/detail/2683?eventId=18539661&calMin=201207&cal=20110710&skinId=1\">View Event Details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603746,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The NCI's Nanotechnology Characterization Laboratory: How to Evaluate Novel Materials for Cancer Therapy and Diagnosis",
+		"startDate":"2012-04-03 12:49:08",
+		"endDate":"2012-04-03 12:49:08",
+		"text":"April 3, 2012",
+		"fullText": "",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603749,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Nanotechnology-Based Cancer Therapeutics—Promise and Challenge—Lessons Learned Through the NCI Alliance for Nanotechnology in Cancer, Published in Pharmaceutical Research",
+		"startDate":"2012-02-01 09:31:18",
+		"endDate":"2012-02-01 09:31:18",
+		"text":"February 2012",
+		"fullText": "The NCI Office of Cancer Nanotechnology Research published a paper in <em>Pharmaceutical Research</em> that summarizes current developments in nanotechnology-based drug delivery and discusses the path forward in the context of research and development occurring within the NCI Alliance for Nanotechnology in Cancer.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://www.ncbi.nlm.nih.gov/pubmed/20814720",
+		"media":[]				
+	},{
+		"id":4603752,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"2012 STMC/CNTC Symposium on Systems Imaging: Applications in Immunology and Cancer",
+		"startDate":"2012-01-12 00:46:59",
+		"endDate":"2012-01-13 00:46:59",
+		"text":"January 12-13, 2012",
+		"fullText": "The University of New Mexico Cancer Center;xNLx;Albuquerque, New Mexico;xNLx;<a href=\"http://stmc.health.unm.edu/systems-imaging-applications-in-immunology-and-cancer/index.html\">View event details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603761,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NanoScience and Emerging Technology in Cancer Research",
+		"startDate":"2011-12-10 01:30:05",
+		"endDate":"2011-12-11 01:30:05",
+		"text":"December 10-11, 2011",
+		"fullText": "La Jolla, California",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603762,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"2011 Materials Research Society Fall Meeting & Exhibit",
+		"startDate":"2011-11-28 00:46:59",
+		"endDate":"2011-12-02 00:46:59",
+		"text":"November 28-December 2, 2011",
+		"fullText": "Boston, Massachusetts;xNLx;<a href=\"http://www.mrs.org/fall2011/\">View event details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603764,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"ChinaNANO 2011",
+		"startDate":"2011-09-07 09:31:18",
+		"endDate":"2011-09-09 09:31:18",
+		"text":"September 7-9, 2011",
+		"fullText": "Beijing, China;xNLx;<a href=\"http://www.chinanano.org/\">View event details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603885,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Gordon Research Conference on Cancer Nanotechnology: From Basic Concepts to Clinical Applications",
+		"startDate":"2011-07-17 00:46:59",
+		"endDate":"2011-07-22 00:46:59",
+		"text":"July 17-22, 2011",
+		"fullText": "Alliance Program Office Organized Event;xNLx;Waterville, Maine;xNLx;<a href=\"http://www.grc.org/programs.aspx?year=2011&program=cancnano\">View event details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603888,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"2011 BIO International Convention",
+		"startDate":"2011-06-27 23:32:39",
+		"endDate":"2011-06-30 23:32:39",
+		"text":"June 27-30, 2011",
+		"fullText": "Walter E. Washington Convention Center;xNLx;Washington, D.C.;xNLx;<a href=\"http://convention.bio.org/\">View event details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603912,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Nanotech Conference & Expo 2011",
+		"startDate":"2011-06-13 23:32:39",
+		"endDate":"2011-06-16 23:32:39",
+		"text":"June 13-16, 2011",
+		"fullText": "Boston, Massachusetts;xNLx;Speaker: Piotr Grodzinski, Ph.D., National Cancer Institute;xNLx;<a href=\"http://www.techconnectworld.com/Nanotech2011/\">View event details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603914,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"NCL Lessons Learned Workshop",
+		"startDate":"2011-06-02 23:32:39",
+		"endDate":"2011-06-03 23:32:39",
+		"text":"June 2-3, 2011",
+		"fullText": "Rockville, Maryland;xNLx;<a href=\"http://web.ncifcrf.gov/events/ncl/default.asp\">View event details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603916,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Commentary on Nanomedicine in Cancer Therapy Published in IEEE Nanotechnology",
+		"startDate":"2011-06-01 23:32:39",
+		"endDate":"2011-06-01 23:32:39",
+		"text":"June 2011",
+		"fullText": "The NCI Office of Cancer Nanotechnology Research published a paper in <em>IEEE Nanotechnology</em>, highlighting interesting research conducted by NCI Alliance for Nanotechnology in Cancer investigators aimed at improving cancer diagnoses and treatment.",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=5871455",
+		"media":[]				
+	},{
+		"id":4603921,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Nanotechnology and Health Care Conference",
+		"startDate":"2011-04-06 10:11:42",
+		"endDate":"2011-04-09 10:11:42",
+		"text":"April 6-9, 2011",
+		"fullText": "Morrilton, Arkansas;xNLx;<a href=\"http://www.uawri.org/educational-programs/public-affairs/nanotechnology-conferences\">View event details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603926,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"The Art of Systems Biology and Nanoscience",
+		"startDate":"2011-04-01 12:49:08",
+		"endDate":"2011-04-02 12:49:08",
+		"text":"April 1-2, 2011",
+		"fullText": "Santa Fe, New Mexico;xNLx;<a href=\"http://sfcomplex.org/2011/02/the-art-of-systems-biology\">View event details</a>",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603931,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"2011 Nanomedicine and Drug Delivery Research Conference",
+		"startDate":"2011-03-04 12:49:08",
+		"endDate":"2011-03-05 12:49:08",
+		"text":"March 4-5, 2011",
+		"fullText": "Los Angeles, California",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603935,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Nano in Cancer: Linking Chemistry, Biology, and Clinical Applications In Vivo (AACR Special Conference)",
+		"startDate":"2011-01-12 00:46:59",
+		"endDate":"2011-01-15 00:46:59",
+		"text":"January 12-15, 2011",
+		"fullText": "Miami, Florida",
+		"category":"248861",
+		"dateFormat":"auto",
+		"externalLink":"",
+		"media":[]				
+	},{
+		"id":4603960,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"BSA Approves New RFA for NCI’s Innovative Molecular Analysis Technologies Program",
+		"startDate":"2013-11-07 09:46:25",
+		"endDate":"2013-11-07 09:46:25",
+		"text":"November 7, 2013",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/bsa/bsa1113/1300-IMATconcept.pdf",
+		"media":[]				
+	},{
+		"id":4603966,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"BSA Approved New RFA for NCI’s Innovative Molecular Analysis Technologies Program",
+		"startDate":"2014-12-02 00:46:59",
+		"endDate":"2014-12-02 00:46:59",
+		"text":"December 2, 2014",
+		"fullText": "",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://deainfo.nci.nih.gov/advisory/ncab/1214/5aDickherberIMAT.pdf",
+		"media":[]				
+	},{
+		"id":4603967,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"Funding Opportunities for the Innovative Molecular Analysis Technologies (IMAT) Program",
+		"startDate":"2015-01-08 12:49:08",
+		"endDate":"2015-01-08 12:49:08",
+		"text":"January 8, 2015",
+		"fullText": "Funding Opportunities for the Innovative Molecular Analysis Technologies (IMAT) Program have been issued. Receipt dates are as follows: March 17, 2015; June 17, 2015; and September 22, 2015.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"http://imat.cancer.gov/funding/overview.asp",
+		"media":[]				
+	},{
+		"id":4603977,
+		"ownerId":"423978",
+		"ownerName":"",
+		"title":"ASEE 2015",
+		"startDate":"2015-03-09 00:46:59",
+		"endDate":"2015-03-11 00:46:59",
+		"text":"March 9-11, 2015",
+		"fullText": "The American Society for Engineering Education’s (ASEE) Engineering Research Council (ERC) Annual Conference is widely attended by U.S. college of engineering representatives, primarily associate deans for research, engineering department heads, and university vice presidents for research. Each year, ASEE ERC board members receive updates from OSTP, AAAS, NSF, DOE, NIST, and NIH on new directions in Federal funding for engineering faculty. For 2015, Dr. Jerry Lee was invited to present on a panel titled “Change and Research Opportunities,” where he shared highlights of various NCI programs and described future directions and potential opportunities for biomedical engineering efforts in cancer research.",
+		"category":"248853",
+		"dateFormat":"auto",
+		"externalLink":"https://www.asee.org/conferences-and-events/conferences/erc/2015",
+		"media":[]				
+	}]
+}
+<!-- STOP CODE REPLACEMENT HERE-->
+
+</script>
+
+
+	</body>
+</html>

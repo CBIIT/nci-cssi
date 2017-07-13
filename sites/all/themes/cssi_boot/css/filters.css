@@ -1,0 +1,34 @@
+﻿/** { box-sizing: border-box; }*/
+.controls button { font-family: 'Roboto Slab', serif; }
+.controls { border: 1px solid #aaa; border-radius: 4px; color: #eee; margin: 0 0 17px; padding: 2%; text-align: center; }
+.controls label { color: black; font-family: 'Roboto Slab', serif; font-weight: 600; line-height: 16px; margin: 0 0.4em 0 0; text-align: center; }
+.controls #buttons { display: table; }
+.controls button { background: none repeat scroll 0 0 #ddd; border: 0 none; border-radius: 4px; color: #666; cursor: pointer; font-size: 12px; font-weight: 600; height: auto; margin: 2px; padding: 0.4em 0.8em; width: 100%; }
+#buttons > div#left { float: left; width: 49%; }
+#buttons > div#right { float: right; width: 49%; }
+.controls button.active { background: none repeat scroll 0 0 #af0015; color: #fff; }
+.controls button:focus { outline: 0 none; }
+.controls button + label { margin-left: 1em; }
+.filter-container { /*min-height: 200px;*/ position: relative; /*text-align: justify;*/ }
+.filter-container::after { content: ""; width: 100%; }
+.filter-container .mix, .filter-container .gap { width: 100%; }
+.filter-container .mix { display: none; margin-bottom: 2%; text-align: left; }
+.filter-container .mix::after { padding: 4% 6%; vertical-align: top; }
+.filter-container .mix::before { content: ""; padding-top: 0; }
+.filter-container .fail-message { display: none; opacity: 0; pointer-events: none; text-align: center; top: 3px; }
+.filter-container.fail .fail-message { display: block; opacity: 1; pointer-events: all; }
+.filter-container .fail-message::before { content: ""; display: inline-block; height: 100%; vertical-align: middle; }
+.filter-container .fail-message span { color: #af0015; display: inline-block; font-size: 13px; font-weight: 800; vertical-align: middle; }
+/*#row { display: table-row; }
+.controls #left, .controls #right, .controls #middle { display: table-cell; }*/
+
+.highlight { background-color: #f1f7fb; border-bottom-color: #2662a8; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #2662a8; border-top-style: solid; border-top-width: 1px; margin-bottom: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; padding-top: 5px; width: 100%; }
+
+@media all and (min-width: 420px) {
+.filter-container .mix, .filter-container .gap { width: 100%; }
+}
+
+@media screen and (max-width:768px) {
+#buttons > div#left { float: left; width: 100%; }
+#buttons > div#right { float: right; width: 100%; }
+}

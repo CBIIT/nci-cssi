@@ -1,0 +1,82 @@
+body { margin: 0 auto; background: url('../images/CSSI-BG.jpg') repeat-x top left #15161B; font-family: 'Roboto Slab', serif; font-size:13px; color: #10141C; line-height:22px;}
+
+/* bootstrap resets */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Roboto Slab', serif; }
+aside { margin: 40px 0; }
+
+/* removes home title */
+body.front h1.page-header { display: none; visibility: hidden; }
+body.front div.main-container #node-5 { display: none; visibility: hidden; â€‹}
+.main-content { background: #ffffff; border-radius: 10px; margin: 15px; padding: 1em 2em; /*overflow:auto;*/ clear:both; display:block; }
+
+.largeTxt, h1 { color: #223351; font-size: 18px; font-weight: bold; line-height: 22px; }
+.title { background: url("../images/arrow_red.png") no-repeat scroll left center transparent; font-size: 1em; font-weight: bold; margin: 1.2em 0; padding-left: 15px; }
+h2 { background: url("../images/arrow_red.png") no-repeat scroll left center transparent; font-size: 1em; font-weight: bold; margin: 1.2em 0; padding-left: 15px; }
+.region-funding h2.block-title { background: url("../images/arrow_red.png") no-repeat scroll 0 2px transparent; padding-left: 15px; font-size: 1.25em; font-weight: bold; margin: 1.2em 0; }
+h3 { background: url("../images/arrow_red.png") no-repeat scroll left center transparent; font-size: 1.2em; font-weight: bold; margin: 1.2em 0; padding-left: 15px; }
+.arrow-red li { list-style:none; background: url("../images/arrow_red.png") no-repeat scroll 0 4px transparent; padding-left: 15px; }
+.arrow-green li { list-style:none; background: url("../images/arrow_green.png") no-repeat scroll 0 4px transparent; padding-left: 15px; }
+.arrow-green.inline li { display: inline-block; margin: 0 20px 0 0; }
+.nopadding { padding: 0 !important; }
+.padding-left { padding: 0 0 0 20px; }
+.padding-bottom-left {padding: 0 0 20px 20px; }
+.block { display: inline-block; width: 100%; }
+.right { float: right !important; }
+.left { float: left !important; }
+.half { width: 48% }
+.shadow { -webkit-box-shadow: 0px 0px 10px 0px rgba(61,61,61,1); -moz-box-shadow: 0px 0px 10px 0px rgba(61,61,61,1); box-shadow: 0px 0px 10px 0px rgba(61,61,61,1); }
+.border { border: 1px solid #000000; }
+.clear { clear:both; }
+/* blocks */
+.bios-block ul { padding: 0; }
+.bios-block ul li { list-style:none; background: url("../images/arrow_green.png") no-repeat scroll 0 4px transparent; padding-left: 15px; }
+
+/*footer css*/
+.footer { /*background: url("../images/footer_bg.jpg") no-repeat scroll center top rgba(0, 0, 0, 0);*/ clear: both; color: #727d87; display: block; font-family: Arial, Verdana, "Trebuchet MS", sans-serif; font-size: 12px; margin: 0; padding: 5px 0 2px; text-align: center; border-top: 0px hidden; }
+.footer .navigation { margin: 0 0 12px; }
+.footer .navigation ul { margin: 0; padding: 0; }
+.footer .navigation ul li { background: url("../images/footer_navitems-divider.gif") no-repeat scroll 1px 3px rgba(0, 0, 0, 0); display: inline; padding: 0 3px 0 10px; }
+.footer .navigation ul li:first-child { background: none repeat scroll 0 0 rgba(0, 0, 0, 0); }
+.footer a:link, .footer a:visited, .footer a:active { color: #727d87; font-size: 11px; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.footer .tagline { margin: 0 0 12px; }
+
+.navbar-default { background-color: transparent !important; border-color: transparent !important; }
+
+/*tables*/
+.table {display:table; width:100%;}
+.table-row {display:table-row}
+.table-cell {display:table-cell;}
+
+
+/* Custom Editor Classes*/
+.mobile {display:none;}
+.center {text-align:center;}
+
+/*menu customizations*/
+.last.leaf.menu-mlid-599 { border-top: 1px solid #727d87; padding-top: 10px; }
+
+@media screen and (max-width:768px) {
+.navbar.container { width:auto; }
+.mobile {display:block;}
+.table, .table-row { display: block; }
+.table-cell { display:block; width:100%; }
+}
+
+@media screen and (max-width:992px) {
+.navbar.container { width:auto; }
+.minibanner-red li.nih, .minibanner-white li.nih, .minibanner-gray li.nih, .minibanner-gradient li.nih { display:none; }
+.minibanner-red li.cancergov, .minibanner-white li.cancergov, .minibanner-gray li.cancergov, .minibanner-gradient li.cancergov { display:none; }
+}
+
+@media screen and (max-width:1200px) {
+.navbar.container { width:auto; }
+}
+
+/* BANNER */
+.minibar { padding: 10px 0; }
+.minibanner-white { background: #fff; }
+.navbar { border:none !important;}
+.minibarslogan { background-color:#1c5e86; }
+.slogan-banner-block { height: 50px; }
+.slogan-banner-block p {font-family: 'Montserrat', sans-serif; font-weight:bold; font-size:1.3em; color:#FFFFFF;}
