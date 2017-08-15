@@ -22,7 +22,24 @@
 /*#row { display: table-row; }
 .controls #left, .controls #right, .controls #middle { display: table-cell; }*/
 
-.highlight { background-color: #f1f7fb; border-bottom-color: #2662a8; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #2662a8; border-top-style: solid; border-top-width: 1px; margin-bottom: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; padding-top: 5px; width: 100%; }
+.highlight { background-color: #f1f1f1; border-bottom-color: #2662a8; border-bottom-style: solid; border-bottom-width: 2px; border-top-color: #2662a8; border-top-style: solid; border-top-width: 2px; margin-bottom: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; padding-top: 5px; width: 100%; }
+.new { background-color: #f1f1f1; border-bottom-color: #717171; border-bottom-style: solid; border-bottom-width: 2px; border-top-color: #717171; border-top-style: solid; border-top-width: 2px; margin-bottom: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; padding-top: 5px; width: 100%; }
+.mix { position: relative; }
+.mix.new .new-text { background: #717171; color: #fff; padding: 5px 10px; margin: 0 0 10px 0; font-size: 14px; line-height: normal !important; }
+/* Class name via Modernizr */
+.mix.new { border-left: 34px solid #717171; /* Make a little room */ padding-left: 10px; }
+.mix.new .new-text { /* Abs positioning makes it not take up vert space */ position: absolute; top: 0; left: 0; /* Border is the new background */ background: none; 
+	/* Rotate from top left corner (not default) */
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin:    0 0;
+    -ms-transform-origin:     0 0;
+    -o-transform-origin:      0 0;
+    
+    -webkit-transform: rotate(90deg); 
+    -moz-transform:    rotate(90deg); 
+    -ms-transform:     rotate(90deg); 
+    -o-transform:      rotate(90deg); 
+}
 
 @media all and (min-width: 420px) {
 .filter-container .mix, .filter-container .gap { width: 100%; }
