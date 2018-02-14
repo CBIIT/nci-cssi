@@ -47,6 +47,7 @@
 ?>
 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces;?>>
 <head profile="<?php print $grddl_profile; ?>">
+<script src="//assets.adobedtm.com/f1bfa9f7170c81b1a9a9ecdcc6c5215ee0b03c84/satelliteLib-71a449a40c1fe9d8db22f15bc8fd2e3a768e8871.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7993733-5"></script>
 <script>
@@ -82,5 +83,6 @@
 <!-- Latest compiled and minified JavaScript --> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="https://static.cancer.gov/webanalytics/wa_cssi_pageload.js"></script>
+<script type="text/javascript">_satellite.pageBottom();</script>
 </body>
 </html>
